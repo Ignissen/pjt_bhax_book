@@ -103,6 +103,19 @@
             A C++ a C-nek a továbbfejlesztése. A C++ sok problémára biztonságosabb, és kényelmesebb megoldást kínál, mint a C. C-ben üres paraméterlistával definiálunnk, akkor az tetszőleges számú paramáéterrel hívható. A C++-ban azonban az üres paraméterlista egy "void" paraméter megadásával ekvivalens. C nyelvben is
             létezik több bájtos sztring. C++-ban miinden olyan helyen állhat változódeklaráció, ahol utasítás állhat. A C nyelvben a neve azonosít egy függvényt, C++-ban viszont a függvényeket a nevük, és az argumentumlistájuk azaonosítja. Míg a C nyelv úgy hivatkozik egy függvényre a linker szintjén, hogy egy aláhúzást tesz
             a függvénynevek elé, addig a C++ az egyes fordítókra bízza a névferdítés implementálását. Cím szerinti paraméterátadás, ha a változó címét adjuk át, ebebn az esetben nem tudjuk megváltoztatni úgy a változót, hogy az értéke megmaradjon. Az érték szerinti paraméteradásnál viszont, készül másolat a változóról, így végezhetünk műveleteket úgy, hogy a változó értékét nem befolyásoljuk. A C++ referenciatípus bevezetése feleselgessé teszi a pointerek cím szerinti pareméterátadását.
-        </para>  
+        </para> 
+        <para>
+            VI. heti előadás (17-58.):
+        </para>
+        <para>
+            Ez a fejezet a C++ osztályairól szól.     
+            Az objektum orientált programozás alapelve, hogy a probléma megoldását segítse azzal, hogy az emberi gondolkodáshoz közelebb hozza a programozást az osztályok és objektumok bevezetésével. Az egységbe zárás jelenti azt, hogy az összetartozó változók és függvények egy egységben legyen, ezek lesznek az adattagok és a tagfüggvények. Adatrejtés a private és protected adattagok és tagfüggvények bevezetésével jött létre. Az adatrejtés célja, hogy az osztály egyes tagjait ne lehessen kívülről elérni. A konstruktor szerepe, hogy lefusson, amikor létrejön az objektum, ezáltal akár inicializálva az adattagokat. A destruktor célja, hogy lefusson, amikor az objektum megsemmisül, ezáltal akár felszabadítva a diamikus adattagokat. A dinamikus adattagok osztályon belüli pointerek, amelyeket futásidőben hozzuk létre dinamikus memóriafoglalással, ezért ezeket, ha már nincs rájuk szükség, de legkésőbb a destruktorban fel kell szabadítani. A friend osztályok, illetve függvények olyan osztályok, illetve függvénynek, amelyek ugyan nem tagjai az osztálynak, viszont hozzáférnek azok private tagjaihoz. A tagváltozók inicializálása történhet a konstruktoron belül, illetve tagfüggvénnyel, vagy külső függvénnyel is. A statikus tagok azzal a tulajdonsággal rendelkeznek, hogy nem kell az osztályt példányosítani, hogy használni tudjuk. Az osztályok tartalmazhatnak beágyazott definíciókat, amelyek lehetnek enumerációk, struktúrák vagy akár osztályok is.
+        </para>
+        <para>
+            VII. heti előadás (93-96.):
+        </para>
+        <para>
+            Ez a fejezet az operátokról és azok túlterheléséről szól C++ nyelvben. Az operátorok alapértelmézés szerint az argumentumain hadjtanak végre műveletet, amelyek visszatérési értékével tudunk dolgozni. C++-ban nem lehet új operátorokat létrehozni, azonban majdnem mindet túl lehet terhelni. A túlterhelés célja, hogy bizonyos operátorokat más célra használhassunk, mint az erdeti célja, a programozás megkönnyítése céljából, mint például a bitshift operátor túlterhelése az alapértelmezett IO objektumoknál.
+        </para>
     </section>        
 </chapter>                
