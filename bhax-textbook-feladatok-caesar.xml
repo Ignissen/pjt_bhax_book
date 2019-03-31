@@ -1,0 +1,163 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Caesar!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title><type>double **</type> háromszögmátrix</title>
+        <para>
+           
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:  
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/haromszog_matrix.c">https://github.com/Ignissen/pjt_prog1/blob/master/haromszog_matrix.c</link>              
+        </para>
+        <para>
+            A programban helyet foglalok a memóriában egy <type>double</type>-öket tartalmazó alsó háromszögmátrixnak. Majd k=0-tól a mátrix minden elemének 1.1-es lépésközzel értékül adtam k-t. Ezután a mátrix standard uotputra való kiíratása történik. Következőnek felszabadítom a pointerek által lefoglalt memóriacímeket, majd a "return 0"-val jelzem az operációs rendszer felé, hogy a program futása hiba nélkül befejeződött.
+        </para>            
+    </section>        
+    <section>
+        <title>C EXOR titkosító</title>
+        <para>
+            Írj egy EXOR titkosítót C-ben!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:   
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/exor.c">https://github.com/Ignissen/pjt_prog1/blob/master/exor.c</link>             
+        </para>
+        <para>
+            Ez a program a legelején megnézi, hogy a kapott argumentumok száma több, mint kettő. Erre azért van szükség, mert a kódolandó szövegfájl nevét és a titkosításhoz használt kulcsot parancssori argumentumként kapja meg a program. Ha a feltétel teljesül, tovább fut a program, ha nem, akkor kiírja standard outputra a program helyes használatának módját. Ezután az igaz ágon belül megnyitjuk olvasásra a kódolandó szöveget tartalmazó fájlt. Ha a fájl megnyitása nem sikerült, hibaüzenettel kilép a program. Ha sikerült, akkor karakterenként beolvassuk, a kulcs megfelelő karakterével "össze-exorozzuk", majd kiíratjuk standard outputra. Ha végzett a beolvasással, akkor a tiszta szöveget tartalmazó fájlt bezárjuk, majd kilép és jelzi az operációs rendszer felé, hogy a program futása hiba nélkül véget ér.
+        </para>            
+    </section>        
+    <section>
+        <title>Java EXOR titkosító</title>
+        <para>
+            Írj egy EXOR titkosítót Java-ban!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:   
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/exor.java">https://github.com/Ignissen/pjt_prog1/blob/master/exor.java</link>             
+        </para>
+        <para>
+            Ez a program az előző feladat megoldásának java átirata, amely annyival különbözik az előzőtől, hogy itt a tiszta szöveget tartalmazó fájl neve tiszta.txt, amely egy mappában van a programmal, iletve a kulcsot a standard inputról kéri be, nem parancssori argumentumokként.
+        </para>            
+    </section>        
+    <section>
+        <title>C EXOR törő</title>
+        <para>
+            Írj egy olyan C programot, amely megtöri az első feladatban előállított titkos szövegeket!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/t.c">https://github.com/Ignissen/pjt_prog1/blob/master/t.c</link>                
+        </para>
+        <para>
+            Ez a program több függvényből is áll. A <function>atlagos_szohossz</function> függvény a program által éppen generált tesztkulcscsal visszafejtett szöveg átlagos szóhosszát adja vissza.
+        </para>         
+        <para>
+            A <function>tiszta_lehet</function> függvény azt adja meg, hogy a tesztkulcscsal visszafejtett szöveg lehet-e a tényleges visszafejtett szöveg. Ennek az a feltétele, hogy az átlagos szóhossz az hat és kilenc között legyen, illetve tartalmazza a következő négy szót: "hogy", "az", "nem", "ha".
+        </para>   
+        <para>
+            Az <function>exor</function> függvény hajtja végre a titkos szöveg a program által generált kulcsokkal történő visszafejtését, amely vagy a tényleges visszafejtés, vagy nem.
+        </para>
+        <para>
+            Az <function>exor_tores</function> függvény meghívja az <function>exor</function> függvényt, majd a <function>tiszta_lehet</function> függvényt, amely, ha igaz értékkel tér vissza, akkor kiírja az adott kulcsot, illetve a kulcscsal visszafejtett szöveget.
+        </para>
+        <para>
+            Végül a <function>main</function> függvényben beolvassuk a titkosított szöveget, majd nyolc egymásbaágyazott for ciklussal végig vizsgáljuk az összes kulcsot. Ezt a lépést Bátfai Norbert <link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tamop412A/2011-0063_01_parhuzamos_prog_linux/ch05s02.html">
+Párhuzamos programozás GNU/Linux környezetben c.</link> könyvének linkelt fejezete alapján OpenMP használatával párhuzamossá tettem.
+        </para>
+    </section>        
+    <section>
+        <title>Neurális OR, AND és EXOR kapu</title>
+        <para>
+            R
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>               
+        </para>
+        <para>
+            Ebben a feladatban a cél egy olyan neurális háló létrehozása és tanítása, amely az egyszerű logikai műveletek elvégzésére képes.
+        </para>            
+        <para>
+            Ez a kód igazából négy kis eltéréssel ismétlődő részből áll. Minden részben lényegében ugyanaz történik, egyedül a logikai művelet változik, amelyre feltanítjuk a neurális hálót. Ezalól kivétel az utolsó, amiről lentebb szó lesz.
+        </para>
+        <para>
+            Első rész:
+            <programlisting language="R">
+                <![CDATA[
+a1    <- c(0,1,0,1)
+a2    <- c(0,0,1,1)
+OR    <- c(0,1,1,1)
+
+or.data <- data.frame(a1, a2, OR)
+
+nn.or <- neuralnet(OR~a1+a2, or.data, hidden=0, linear.output=FALSE, stepmax = 1e+07, threshold = 0.000001)
+
+plot(nn.or)
+
+compute(nn.or, or.data[,1:2])
+
+                ]]>
+            </programlisting>
+            Az elején megadjuk, hogy milyen bementi adatokból milyen eredményt kell megközelítenie a threshold-dal jelölt hibahatáron belül. Ezután ezt megadjuk a neurális hálónak is, majd a neurális hálót feltanítjuk a feladatra. Itt meghívjuk a <function>neuralnet</function> függvényt, amely megkapja a bementi adatokat és az elvárt kimeneteket, 0 rejtett réteggel, 0.000001-es hibahatárral. Ezután a <function>plot</function> függvénnyel kirajzoljuk a neurális háló sematikus képét egy gráf segítségével.
+        </para>
+        <para>
+            Majd a <function>compute</function> függvénnyel meghívjuk a már feltanított neurális hálót az elején megadott adatokkal, hogy kiszámolja a logikai műveletek eredményét.
+        </para>
+        <para>
+            <programlisting language="R">
+                <![CDATA[
+a1      <- c(0,1,0,1)
+a2      <- c(0,0,1,1)
+EXOR    <- c(0,1,1,0)
+
+exor.data <- data.frame(a1, a2, EXOR)
+
+nn.exor <- neuralnet(EXOR~a1+a2, exor.data, hidden=c(6, 4, 6), linear.output=FALSE, stepmax = 1e+07, threshold = 0.000001)
+
+plot(nn.exor)
+
+compute(nn.exor, exor.data[,1:2])
+
+                ]]>
+            </programlisting>
+            Itt annyi különbség van, hogy míg a harmadik részben feltanított neurális háló kb. 50%-os pontossággal dolgozott, ami annyit jelent, mintha véletlenszeűen találgatott volna, itt már több neuron van a hálóban, növelve a pontosságot. Ebben az esetben három rejtett neuronréteg van, amelyek rendre 6, 4, 6 neuronból állnak. Ezeket a "hidden=c(6,4,6)" argumentum jelöli. Ezzel már a hibahatáron belülre kerül többnyire az EXOR logikai művelet értékének kiszámítása.
+        </para>
+    </section>        
+    <section>
+        <title>Hiba-visszaterjesztéses perceptron</title>
+        <para>
+            C++
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:    
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/perc.cpp">https://github.com/Ignissen/pjt_prog1/blob/master/perc.cpp</link>            
+        </para>
+        <para>
+            A program a kód elején vizsgálja, hogy a parancssori argumentumok száma kettő-e. Erre azért van szükség, mert az bemenetként szolgáló png fájl nevét parancssori argumentumként kapja meg a program. Ezután a png++ függvénykönyvtár segítségével beolvassa a bementi fájlt. Ezután létrehoz egy perceptront 4 rétegű neurális hálóval, amelynek neuron száma sorra 3, a kép pixeleinek száma, 256, 1. Majd létrehoz egy dinamikusan foglalt a kép pixeleinek megfelelő számosságú <type>double</type> tömböt, amelybe belemásolja a kép minden pixelének vörös értékét. Ezután meghívja a perceptront, hogy dolgozza fel a képet. A progvam végén felszabadítja a pointerek által foglalt memóriát, majd kilép.
+        </para>            
+    </section>        
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

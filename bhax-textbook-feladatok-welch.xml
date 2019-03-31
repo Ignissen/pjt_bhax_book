@@ -1,0 +1,151 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Welch!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Első osztályom</title>
+        <para>
+            Valósítsd meg C++-ban és Java-ban az módosított polártranszformációs algoritmust! A matek háttér 
+            teljesen irreleváns, csak annyiban érdekes, hogy az algoritmus egy számítása során két normálist
+            számol ki, az egyiket elspájzolod és egy további logikai taggal az osztályban jelzed, hogy van vagy
+            nincs eltéve kiszámolt szám.
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            C++:
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/polargen.cpp">https://github.com/Ignissen/pjt_prog1/blob/master/polargen.cpp</link>
+        </para>
+        <para>
+            Java:
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/PolarGen.java">https://github.com/Ignissen/pjt_prog1/blob/master/PolarGen.java</link>
+        </para>
+        <para>
+            A megoldásban létrehoztunk egy Polargen nevű osztályt, amely konstruktorában megadjuk, hogy még nincs eltárolt szám, illetve a véletlenszám-generátornak random seedet adunk. 
+        </para>
+        <para>
+            A <function>kovetkezo</function> függvény megnézi, hogy van-e tárolt szám, ha nincs, akkor generál két számot, amelyből az egyiket eltárolja, majd a logikai változót hamisra állítja, majd a másik számmal visszatér.
+        </para>
+        <para>
+            A feladat célja az, hogy lássuk, hogy az objektum orientált programozás nem nehéz, de még természetes is. A Java SDK-ban is hasonlóan megírt programrészleteket találhatunk. Természetesnek azért mondható, mert mi emberek a világon mindent objektumokként képzelünk el. Például minden tárgy egy objektum, aminek vannak különböző adatai, például szín, méret, hely, illetve lehetnek "eljárásai/függvényei", például egy telefonnak, ha telefonálunk, stb.
+        </para>
+    </section>        
+
+    <section>
+        <title>LZW</title>
+        <para>
+            Valósítsd meg C-ben az LZW algoritmus fa-építését!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása: 
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/binfa.c">https://github.com/Ignissen/pjt_prog1/blob/master/binfa.c</link>               
+        </para>
+        <para>
+            A progra melején létrehoztam egy Node nevű struktúrát, amely aZ LZW bináris fában lévő csomópontokat reprezentálja. Ennek van egy <type>char</type> típusú változója, illetve két Node-ra mutató mutató. Az egyik a nullás gyerekre mutat, a másik az egyes gyerekre.
+        </para>
+        <para>
+            A <function>create_empty</function> függvény inicializálja a bináris fát egy kitüntetett gyökérelemmel, amely a '/' karakterrel van megjelenítve a bejárásoknál.
+        </para>
+        <para>
+            A <function>create_node</function> függvény létrehoz egy csomópontot az argumentumként kapott karakterrel, a gyermekekre mutató mutatókat NULL-ra állítja.
+        </para>
+        <para>
+            A <function>insert_tree</function> függvény valósítja meg az LZW bináris fa építését. A függvény először megnézi, hogy a kapott érték '0'-e. Ha igen, akkor megnézi, hogy a fa mutató által címzett csomópontak van-e bal oldali gyermeke (0-s gyermek). Ha van, akkor a fa mutató az aktuális csomópont bal gyermekére lép. Ha nincs, akkor létrehozza az aktuális csomópont bal oldali gyermekét, majd a fa mutatót a gyökérre állítja. Ha a kapott érték nem '0', akkor a függvény végrehajtja a fent leírt utasításokat, csak az aktuális csomópont jobb gyermekére.
+        </para>
+        <para>
+            Az <function>inorder</function> eljárás inorder módon rekurzívan bejárja a bináris fát. Az inorder bejárásnál először a bináris részfa bal oldalát járjuk be, majd feldolgozzuk a részfa gyökérelemét, aztán feldolgozzuk a részfa jobb oldalát.
+        </para>
+        <para>
+            A <function>destroy_tree</function> eljárás rekurzívan postorder módon bejárja a fát és minden rekurzió végén felszabadítja a részfa gyökérelemét. A felszabadítás előtt meg kell vizsgálni, hogy a részfa gyökere egyenlő-e a teljes fa gyökerével, mert ebben a megoldásban a teljes fa gyökéreleme nem dinamikusan foglalt.
+        </para>
+        <para>
+            A <function>main</function> függvényben feltöltöm a fát 10000 elemmel, ezután inorder módon bejárom a bináris fát, majd felszabadítom a fa pointereit.
+        </para>
+        
+    </section>        
+        
+    <section>
+        <title>Fabejárás</title>
+        <para>
+            Járd be az előző (inorder bejárású) fát pre- és posztorder módon is!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása: 
+            Az előző (6.2) feladat megoldásában megtalálható ennek a feladatnak a megoldása is.               
+        </para>
+        <para>
+            A <function>preorder</function> eljárás annyiban különbözik az <function>inorder</function> eljárástól, hogy ebben először feldolgozzuk a részfa gyökerét, majd bejárjuk a részfa bal oldalát, aztán pedig a jobb oldalát.
+        </para>
+        <para>
+            A <function>postorder</function> eljárás annyiban különbözik az <function>inorder</function> eljárástól, hogy ebben először  bejárjuk a részfa bal oldalát, aztán pedig a jobb oldalát, majd feldolgozzuk a részfa gyökerét.
+        </para>
+        <para>
+            A <function>usage</function> eljárás kirírja standard kimenetre, hogy hogyan kell/lehet futtatni a programot. Ebben az esetben három kapcsoló közül kell egyet megadni, annak megfelelően, hogy preorder, inorder vagy postorder módon szeretnénk bajárni a bináris fát.
+        </para>
+
+    </section>        
+                        
+    <section>
+        <title>Tag a gyökér</title>
+        <para>
+            Az LZW algoritmust ültesd át egy C++ osztályba, legyen egy Tree és egy beágyazott Node
+            osztálya. A gyökér csomópont legyen kompozícióban a fával!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:   
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/binfa.cpp">https://github.com/Ignissen/pjt_prog1/blob/master/binfa.cpp</link>             
+        </para>
+        <para>
+            Ez a megoldás nagyban épül az előző feladat (6.3) megoldására. A különbség, hogy a bináris fát kezelő függvényeket és eljárásokat a Binfa osztályba rendeztem, illetve a Binfa osztály privát részéve tettem a Node struktúrát. A binfa osztályon belül túlterheltem a balra bitshift operátort, amely mostmár a bináris fa építését látja el, ugyanazon elven, mint az előző feladatokban az <function>insert_tree</function> eljárás.
+        </para>
+    </section>        
+                
+    <section>
+        <title>Mutató a gyökér</title>
+        <para>
+            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a 
+            fával!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/binfa_6.5.cpp">https://github.com/Ignissen/pjt_prog1/blob/master/binfa_6.5.cpp</link>  
+        </para>
+        <para>
+            Ez a megoldás az előző feladat megoldósának egy módosítása. A különbség, hogy ebben a gyökérelemre is már egy mutató mutat, azért a Binfa konstruktorában létre kell hozni a gyökérobjektumot. Ahol a program eddig a gyökérelem referenciáját adta át függvénynek, vagy a faépítő eljárásban, ott mostmár a gyökérelemet kell átadni és nem a referenciáját.
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mozgató szemantika</title>
+        <para>
+            Írj az előző programhoz mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
+            értékadásra alapozva!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+    </section>                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

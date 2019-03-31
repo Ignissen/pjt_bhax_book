@@ -1,0 +1,18 @@
+<authorgroup xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <author>
+        <personname>
+            <honorific></honorific>
+            <surname>Petrus</surname>
+            <firstname>József Tamás</firstname>        
+        </personname>    
+        <affiliation>
+            <shortaffil>Egyetemi hallgató</shortaffil>
+            <jobtitle>2. féléves egyetemi hallgató</jobtitle>
+            <orgname>Debreceni Egyetem</orgname>
+            <orgdiv>Programtervező Informatikus szak </orgdiv>
+            <address>
+                <email>jozsefpetrus@gmail.com</email>
+            </address>
+        </affiliation>
+    </author>    
+</authorgroup>
