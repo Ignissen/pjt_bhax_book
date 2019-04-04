@@ -145,6 +145,12 @@
         </para>
         <para>
             Megoldás forrása:  
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/binfa_move.cpp">https://github.com/Ignissen/pjt_prog1/blob/master/binfa_move.cpp </link>
+        </para>
+        <para>
+            Ez a megoldás a Tag a gyökér (6.4) feladat kiegészítése másoló és mozgató szemantikával. A másoló szemantika lényege, hogy az értékül kapott (esetünkben) bináris fát értékül adja az eredeti fának, minden érték lemásolásával. 
+            A mozgató szemantika pedig úgy működik, hogy az eredeti bináris fa gyökerét "kicseréli" az értékül kapott fa gyökerével, és az értékül kapott fa gyökerének gyermekeit nullpointerre állítja, 
+            hogy a scope elhagyása után lefutó konstruktor ne törölje le az eredetileg létező fát.
         </para>
     </section>                     
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
