@@ -15,10 +15,17 @@
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/10/10/myrmecologist">https://bhaxor.blog.hu/2018/10/10/myrmecologist</link>
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>               
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Myrmecologist">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Myrmecologist</link>
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/hangya.png" scale="45"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+        <para>
+            Ennek a programnak a célja hangyák szimulálása, amelyek "utakat" alakítanak ki, illetve azokon az utakon közlekednek. A program futása után kb. egy perccel már látható, hogy a hangyák, ha találnak egy utat, akkor próbálnak azon közlekedni. Az utatakat a halvány kékeszöld négyzetek jelentik.
         </para>            
     </section>        
     <section>
