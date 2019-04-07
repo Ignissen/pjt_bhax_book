@@ -51,6 +51,9 @@
         <para>
             A feladat megoldásához SFML-t használtam. A program két osztályból és három függvényből áll. Az első osztály feladata, hogy kirajzolja a négyzetrácsos hálót, amely négyzetei jelképezik a sejteket. A következő osztály a Square osztály, amely feladata a hálóban lévő sejtek helyének, állapotának tárolása, illetve azok hálón belülre rajzolása. Az első osztályon kívüli függvény az <function>update</function> függvény, amely célja, hogy mindeg egyes sejtet megvizsgál, az életjáték szabályai alapján. Ezek a szabályok pedig, ha egy sejt él és 2 vagy 3 szomszédja van, akkor életben marad, ellenkező esetben elpusztul, ha halott és pontosan 3 szomszédja van, élő sejt lesz belőle, ellenkező esetben halott marad. A következő függvény a <function>killall</function>, amely célja, hogyha a "játékos" szerkesztő módban van, akkor megöli az összes sejtet. Ez nem szükséges bele. Tesztelés céljából került bele, de hasznos lehet, ha nem akarjuk újraindítani a programot egy másik kezdeti alakzat szimulálásáért. Az utolsó függvény a <function>main</function>, amelyben létrehozok egy 1000x1000 pixeles ablakot, majd beállítom, hogy 10 FPS legyen a felső határ megjelenítésnél. Ezután létrehozok néhány változót ,amelyek a játék működéséhez kellenek. Ezek után elérkezünk a fő ciklushoz, amely addig fut, amíg a létrehozott ablak be nem záródik valamilyen módon (erről később). A ciklusban először letörlöm a képernyőt, hogy ne az előzőnek kirajzolt képre rajzoljon rá a program. Majd a belső while ciklus megvizsgálja, hogy történt-e valamilyen esemény (jelen esetben egér és billentyű eseméynek lehetnek ezek, illetve az ablak bezárása). Ha az ablak bezáródik, illetve, ha a felhasználó megnyomja a q betűt, a program leáll. Ha szerkesztő módban bal egérgombbal kattintunk, akkor a kurzor alatt lévő halott sejt élő lesz, és fordítva. A c betű lenyomása esetén, ha szerkesztő módban vagyunk, akkor megöli az összes sejtet. Ezután következik a háló és a sejtek kirajzolása, majd az <function>update</function> függvény hívása, ha nem szerkesztő módban vagyunk, illetve minden sejtet frissíti, hogy megkapják az új állapotukat (élő/halott) kirajzoláshoz.
         </para>            
+        <para>
+            Az életjátékot a cambridge-i egyetem matematikusa, John Conway találta ki. A játékként való megnevezés megtévesztő lehet, ugyanis a játékos egyetlen feladata, hogy megadja a kiindulási alakzatot, majd figyeli, hogy mi jön ki a program futása során a kiindulásialakzatból.
+        </para>
     </section>        
     <section>
         <title>BrainB Benchmark</title>
@@ -60,10 +63,10 @@
             Megoldás videó: 
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>               
+            Megoldás forrása: <link xlink:href="https://github.com/nbatfai/esport-talent-search">https://github.com/nbatfai/esport-talent-search</link>               
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A program célja azt mérni, hogy mennyire vagyunk képesek figyelemmel kísérni karakterünket, illetve, ha "elveszítjük" a képernyőn, akkor milyen gyorsan találjuk meg újból. Ez főleg online játékokban fontos. Ugyanis online játékokban, például a League of Legends nevű MOBA játékban ez egy elég gyakori probléma, hogy nagyobb összecsapás esetén egyszerűen nem találjuk a képernyőn a karakterünket.
         </para>            
     </section>        
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
