@@ -31,10 +31,10 @@
             Megoldás videó: 
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>               
+            Megoldás forrása: <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/game_of_life.java">https://github.com/Ignissen/pjt_prog1/blob/master/game_of_life.java</link>               
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A feladat megoldása ugyanazon logikát felhasználva készült el, mint a 7.3-as feladat, csak ez java nyelven és a java beépített eszközeit használva.
         </para>            
     </section>        
     <section>
@@ -46,10 +46,10 @@
             Megoldás videó: 
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>               
+            Megoldás forrása: <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/game_of_life.cpp">https://github.com/Ignissen/pjt_prog1/blob/master/game_of_life.cpp</link>               
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A feladat megoldásához SFML-t használtam. A program két osztályból és három függvényből áll. Az első osztály feladata, hogy kirajzolja a négyzetrácsos hálót, amely négyzetei jelképezik a sejteket. A következő osztály a Square osztály, amely feladata a hálóban lévő sejtek helyének, állapotának tárolása, illetve azok hálón belülre rajzolása. Az első osztályon kívüli függvény az <function>update</function> függvény, amely célja, hogy mindeg egyes sejtet megvizsgál, az életjáték szabályai alapján. Ezek a szabályok pedig, ha egy sejt él és 2 vagy 3 szomszédja van, akkor életben marad, ellenkező esetben elpusztul, ha halott és pontosan 3 szomszédja van, élő sejt lesz belőle, ellenkező esetben halott marad. A következő függvény a <function>killall</function>, amely célja, hogyha a "játékos" szerkesztő módban van, akkor megöli az összes sejtet. Ez nem szükséges bele. Tesztelés céljából került bele, de hasznos lehet, ha nem akarjuk újraindítani a programot egy másik kezdeti alakzat szimulálásáért. Az utolsó függvény a <function>main</function>, amelyben létrehozok egy 1000x1000 pixeles ablakot, majd beállítom, hogy 10 FPS legyen a felső határ megjelenítésnél. Ezután létrehozok néhány változót ,amelyek a játék működéséhez kellenek. Ezek után elérkezünk a fő ciklushoz, amely addig fut, amíg a létrehozott ablak be nem záródik valamilyen módon (erről később). A ciklusban először letörlöm a képernyőt, hogy ne az előzőnek kirajzolt képre rajzoljon rá a program. Majd a belső while ciklus megvizsgálja, hogy történt-e valamilyen esemény (jelen esetben egér és billentyű eseméynek lehetnek ezek, illetve az ablak bezárása). Ha az ablak bezáródik, illetve, ha a felhasználó megnyomja a q betűt, a program leáll. Ha szerkesztő módban bal egérgombbal kattintunk, akkor a kurzor alatt lévő halott sejt élő lesz, és fordítva. A c betű lenyomása esetén, ha szerkesztő módban vagyunk, akkor megöli az összes sejtet. Ezután következik a háló és a sejtek kirajzolása, majd az <function>update</function> függvény hívása, ha nem szerkesztő módban vagyunk, illetve minden sejtet frissíti, hogy megkapják az új állapotukat (élő/halott) kirajzoláshoz.
         </para>            
     </section>        
     <section>
