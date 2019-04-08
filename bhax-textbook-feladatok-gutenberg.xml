@@ -67,6 +67,30 @@
         <para>
             Történhet érték szerint, mint a C-ben például. Ekkor a formális paraméter értékül kapja az aktuális paraméter értékét. Ennél a módszernél a függvényben nem lehet megváltoztatni a aktuális paraméter értékét. Lehet címszerinti a paraméterátadás. Ekkor a formális paraméter címe értékül kapja az aktuális paraméter címét. Ilyenkor a függvényben meg lehet változtatni az aktuális paraméter értékét. Lehet eredmény szerinti átadás is, ekkor a formális paraméter szintén megkapja az aktuális paraméter címét, de nem használja, csak a végén beletölti az adatokat. Létezik még érték-eredmény szerinti, ekkor másolódik a cím szintén, és használja is az adatokat, majd a függvény végén belemásolja a formális paraméterbe az adatokat.
         </para>
+        <para>
+            VIII. heti előadás (82. oldal, a "A blokk" című rész):
+        </para>
+        <para>
+            A VI. heti előadáson már volt róla szó. Ott található A blokk című rész lényege.
+        </para>
+        <para>
+            VIII. heti előadás (83. oldal, a "Hatáskör" című rész):
+        </para>
+        <para>
+            A hatáskör szinonímája a láthatóság. Egy név hatásköre a program szövegének azon részét jelenti, ahol az adott név ugyanazt a programozási eszközt hivatkozza. A név hatásköre a programegység. A programegységben a deklarált nevet, a programegység lokális nevénk nevezzük. Azt a nevet, amelyre csak a programegységben hivatkozunk(nem deklaráljuk) szabad névnek hívjuk. Hatáskörkezelésnek hívjuk azt a folyamatot, amikor megállapítjuk egy név hatáskörét. Két fajtája van, a hatáskörkezelésnek az egyik a statikus, a másik pedig a dinamikus. A hatáskör mindig befelé terjed, kifelé soha. Ha egy név nem lokális egy programegységben, de onnan látható, azt globális névnek hívjuk. A globális név és a lokális név relatív fogalmak. Statikus hatáskörkezelésnél a programban szereplő összes név hatásköre a forrásszöveg alapján egyértelműen megállapítható. Dinamikus hatáskörkezelésnél, viszont a hatáskör futási időben változhat és más-más futásnál más-más lehet. Az eljárásorientált nyelvek a statikus hatáskörkezelést valósítják meg.     
+        </para>
+        <para>
+            VIII. heti előadás (98. oldal, a "Absztrakt adattípus" című rész):
+        </para>
+        <para>
+            Olyan adattípus, amely megvalósítja a bezárást vagy információ rejtést. tehát ennél az adattípusnál nincs reprezentácó és művelet implementáció. Az ilyen típusú programozási eszeközök műveleteihez a specifikációi által meghatározott interfészen keresztül férhetük hozzá. Így az értékeket véletlenül vagy szándékosan nem ronthatjuk el(biztonságos programozás). Az elmúlt évtizedekben nagyon fontos fogalommá vált és befolyásolta a nyelvek fejlődését. 
+        </para>
+        <para>
+            VIII. heti előadás (121. oldal, a "Generikus programozás" című rész):
+        </para>
+        <para>
+            A generikus programozás az újrafelhasználhatóság, és így a procedurális absztrakció eszköze. Bármely programozási nyelvbe beépíthető. A generikus programozás lényege: Megadunk egy paraméterezhető forrásszöveg-mintát, amit majd a fordító kezel. A mintaszövegből paraméterek segítségével előállítható egy lefordítható konkrét szöveg. Az újrafelhasználás alatt azt értjük, hogy egy mintaszövegből tetszőleges számú konkrét szöveg generálható, a mintaszöveg típussal is paramétertezhető. A generikus formális paramétereinek száma mindig fix. A paraméterkiértékelésnél a kötés az alapértelmezett, de alkalmazható a év szerinti kötés is. A paraméterátadás változónál érték, típusnévnél név szerint történik. 
+        </para>
     </section>        
     <section>
         <title>Programozás bevezetés</title>
