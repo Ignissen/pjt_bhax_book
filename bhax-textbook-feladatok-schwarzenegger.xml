@@ -14,7 +14,8 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:  
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.py">https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.py</link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
@@ -30,7 +31,8 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.r">https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.r</link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
