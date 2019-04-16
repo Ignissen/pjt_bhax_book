@@ -7,7 +7,7 @@
     </info>
     <section>
         <title>Szoftmax Py MNIST</title>
-        <para>aa
+        <para>
             Python
         </para>
         <para>
@@ -18,7 +18,7 @@
             <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.py">https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.py</link>
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A program elején importájuk a tensorflow modult, amely segítségével töltjük be az MNIST adatbázisban tárolt adatokat. Az x_train, y_train, x_test, y_test változókban eltároljuk az MNIST adatbázisban található képeket, és hozzá tartozó címkéket, illetve a tesztképeket és címkéket. Ezután konvertáljuk az x_train és x_test tömbök értékeit <type>float</type> típusúra, majd normalizáljuk az értékeket, hogy 0 és 1 közé essenek. Importálunk még hat modult, amelyek a neurális háló felépítéséhez szükségesek. Ezután létrehozzuk a neurális háló modelljét, majd feltanítjuk a hálót. Ezután pedig kiértékeljük a neurális háló "tudását" a teszt képekkel és címkékkel.
         </para>
     </section>        
 
@@ -35,7 +35,7 @@
             <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.r">https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.r</link>
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            Ez a megoldás közel azonos kód szempontjából, mint az előző. Az alapvető eltérés a nyelv szintaxisa. De ezentúl közel megegyezik. Az eltérés, hogy itt nem importáljuk a tensorflow modult, hanem csak a keras modult, és itt ez tartalmazza az MNIST adatbázisban tárolt adatokat.
         </para>
     </section>        
 
@@ -49,9 +49,10 @@
         </para>
         <para>
             Megoldás forrása:                
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/deep_mnist.py">https://github.com/Ignissen/pjt_prog1/blob/master/deep_mnist.py</link>
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            
         </para>
     </section>        
 
