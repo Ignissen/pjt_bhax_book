@@ -11,17 +11,17 @@
             Python
         </para>
         <para>
-            Megoldás videó:
+            Megoldás videó: <link xlink:href="https://youtu.be/j7f9SkJR3oc">https://youtu.be/j7f9SkJR3oc</link>      
         </para>
         <para>
-            Megoldás forrása:  
-            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.py">https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.py</link>
+            Megoldás forrása: <link xlink:href="https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0">https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0</link> (/tensorflow-0.9.0/tensorflow/examples/tutorials/mnist/), <link xlink:href="https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol">https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol</link>  
         </para>
         <para>
-            A program elején importájuk a tensorflow modult, amely segítségével töltjük be az MNIST adatbázisban tárolt adatokat. Az x_train, y_train, x_test, y_test változókban eltároljuk az MNIST adatbázisban található képeket, és hozzá tartozó címkéket, illetve a tesztképeket és címkéket. Ezután konvertáljuk az x_train és x_test tömbök értékeit <type>float</type> típusúra, majd normalizáljuk az értékeket, hogy 0 és 1 közé essenek. Importálunk még hat modult, amelyek a neurális háló felépítéséhez szükségesek. Ezután létrehozzuk a neurális háló modelljét, majd feltanítjuk a hálót. Ezután pedig kiértékeljük a neurális háló "tudását" a teszt képekkel és címkékkel.
+            Tanulságok, tapasztalatok, magyarázat...
         </para>
     </section>        
 
+<!--
     <section>
         <title>Szoftmax R MNIST</title>
         <para>
@@ -31,14 +31,14 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:
-            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.r">https://github.com/Ignissen/pjt_prog1/blob/master/mnist_softmax.r</link>
+            Megoldás forrása:                
         </para>
         <para>
-            Ez a megoldás közel azonos kód szempontjából, mint az előző. Az alapvető eltérés a nyelv szintaxisa. De ezentúl közel megegyezik. Az eltérés, hogy itt nem importáljuk a tensorflow modult, hanem csak a keras modult, és itt ez tartalmazza az MNIST adatbázisban tárolt adatokat.
+            Tanulságok, tapasztalatok, magyarázat...
         </para>
     </section>        
-
+-->
+    
     <section>
         <title>Mély MNIST</title>
         <para>
@@ -49,13 +49,12 @@
         </para>
         <para>
             Megoldás forrása:                
-            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/deep_mnist.py">https://github.com/Ignissen/pjt_prog1/blob/master/deep_mnist.py</link>
         </para>
         <para>
-            
+            Tanulságok, tapasztalatok, magyarázat...
         </para>
     </section>        
-
+<!--
     <section>
         <title>Deep dream</title>
         <para>
@@ -71,13 +70,13 @@
             Tanulságok, tapasztalatok, magyarázat...
         </para>
     </section>        
-                  
+-->                  
     <section>
-        <title>Robotpszichológia</title>
+        <title>Minecraft-MALMÖ</title>
         <para>
         </para>
         <para>
-            Megoldás videó:
+            Megoldás videó: <link xlink:href="https://youtu.be/bAPSu3Rndi8">https://youtu.be/bAPSu3Rndi8</link>      
         </para>
         <para>
             Megoldás forrása:                
