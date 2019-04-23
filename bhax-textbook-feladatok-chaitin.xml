@@ -16,6 +16,18 @@
         <para>
             Megoldás forrása:                
         </para>
+        <para>
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/fact.lisp">https://github.com/Ignissen/pjt_prog1/blob/master/fact.lisp</link>
+        </para>
+        <para>
+            <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/fact_recursive.lisp">https://github.com/Ignissen/pjt_prog1/blob/master/fact_recursive.lisp</link>
+        </para>
+        <para>
+            Iteratív: A program elején létrehozom a <function>fact</function> függvényt, amely kiszámolja a faktoriális értékét. A függvény definiálása után bekérünk standard inputról egy számot, majd a bekért számra meghívom a <function>fact</function> függvényt.
+        </para>
+        <para>
+            Rekurzív: A program elején létrehozom a <function>factorial</function> függvényt, amely rekurzív módon kiszámolja a faktoriális értékét. A függvény létrehozása után meghívom a <function>factorial</function> függvényt az 5 számra.
+        </para>
     </section>        
 <!--        
     <section>
