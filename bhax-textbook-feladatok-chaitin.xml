@@ -23,10 +23,10 @@
             <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/fact_recursive.lisp">https://github.com/Ignissen/pjt_prog1/blob/master/fact_recursive.lisp</link>
         </para>
         <para>
-            Iteratív: A program elején létrehozom a <function>fact</function> függvényt, amely kiszámolja a faktoriális értékét. A függvény definiálása után bekérünk standard inputról egy számot, majd a bekért számra meghívom a <function>fact</function> függvényt.
+            Iteratív: A program elején létrehozom a <function>fact</function> függvényt, amely kiszámolja a faktoriális értékét. A függvényben létrehozom a sum nevű változót 1 értékkel, majd a ciklusban a sum változót megszorzom x-szel, majd x-et csökkentem 1-gyel. A függvény definiálása után bekérünk standard inputról egy számot, majd a bekért számra meghívom a <function>fact</function> függvényt.
         </para>
         <para>
-            Rekurzív: A program elején létrehozom a <function>factorial</function> függvényt, amely rekurzív módon kiszámolja a faktoriális értékét. A függvény létrehozása után meghívom a <function>factorial</function> függvényt az 5 számra.
+            Rekurzív: A program elején létrehozom a <function>factorial</function> függvényt, amely rekurzív módon kiszámolja a faktoriális értékét. A függvényben megnézem, hogy x egyenlő-e 1-gyel, ha igen, akkor a visszatérési érték 1 legyen, ha pedig nagyobb, akkor a sum értéke x-szer a factorial(x-1) értéke lesz. Az előbb nem a lisp szintaxisa szerint írtam. A függvény létrehozása után meghívom a <function>factorial</function> függvényt az 5 számra.
         </para>
     </section>        
 <!--        
