@@ -272,6 +272,9 @@ false]]></screen>
         <para>
             A Brun-tétel szerint az ikerprímek reciprokösszege egy meghatározható szám felé tart, amelyet a B<subscript>2</subscript> konstanssal jelölnek, amely értéke B<subscript>2</subscript>≈1,902160583104. Az ikerprím olyan két egymást követő prímszámot jelent, amelyek különbsége 2.
         </para>
+        <para>
+            Az stp változó egy függvénypointer lesz, amely függvény a megadott intervallum prímszámait hivatott megkeresni. az x tömb értékeket tartalmaz 13-tól 1000000-ig. Az y tömb az stp áltam mutatott függvény értékei lesznek az x tömböt kapva. Végül a <function>plot</function> függvény ábrázolja grafikonon az x és y tömböket koordináta-rendszerben.
+        </para>
     </section>
     
     <section xml:id="bhax-textbook-feladatok-turing.MontyHall">
