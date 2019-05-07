@@ -34,4 +34,45 @@
             Aktualizálás, javítások.
         </revremark>
     </revision>
+    <revision>
+        <revnumber>0.0.5</revnumber>
+        <date>2019-03-31</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Githubra első feltöltés.
+            <link xlink:href="https://github.com/Ignissen/pjt_bhax_book">https://github.com/Ignissen/pjt_bhax_book</link>
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.6</revnumber>
+        <date>2019-04-07</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Conway fejezet frissítése.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.7</revnumber>
+        <date>2019-04-28</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Chaitin fejezet végső feltöltés.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.8</revnumber>
+        <date>2019-04-29</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Brun és Java életjáték frissítve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.8</revnumber>
+        <date>2019-05-07</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Gutenberg frissítve.
+        </revremark>
+    </revision>
 </revhistory>

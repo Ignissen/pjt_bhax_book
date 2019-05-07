@@ -69,6 +69,9 @@
         <para>
             <link xlink:href="http://gnu.hu/fdl.html">http://gnu.hu/fdl.html</link>                
         </para>
+        <para>
+            Ez a könyv <link xlink:href="https://gitlab.com/nbatfai/BHAX">Dr. Bátfai Norbert gitlabon található BHAX repository</link>-jának kibővített változata. 
+        </para>
     </legalnotice>   
     
     <xi:include href="bhax-textbook-revhistory.xml">
