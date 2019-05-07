@@ -91,7 +91,43 @@
         <para>
             A generikus programozás az újrafelhasználhatóság, és így a procedurális absztrakció eszköze. Bármely programozási nyelvbe beépíthető. A generikus programozás lényege: Megadunk egy paraméterezhető forrásszöveg-mintát, ami majd fordítási időben lesz kezelve. A mintaszövegből paraméterek segítségével előállítható egy lefordítható konkrét szöveg. Az újrafelhasználás alatt azt értjük, hogy egy mintaszövegből tetszőleges számú konkrét szöveg generálható, a mintaszöveg típussal is paramétertezhető. A generikus formális paramétereinek száma mindig fix. A paraméterkiértékelésnél a kötés az alapértelmezett, de alkalmazható a név szerinti kötés is. A paraméterátadás változónál értékszerinti, típusnévnél pedig névszerinti. 
         </para>
-    </section>        
+        <para>
+            IX. heti előadás (134. oldal, az "Input/Output" című rész):
+        </para>
+        <para>
+            Az I/O platform-, operációs rendszer-, implemetációfüggő. Léteznek nyelvek, amelyek nem tartalmaznak eszközt, így az implementációra bízzák a megoldást. Az I/O a programnyelvekben egy eszközrendszer, amely a perifériákkal való kommunikációért felel. Az I/O közzéppontjában az állomány áll. Logikai állomány egy olyan programozási eszköz, amelynek van neve, illetve amelynél az absztrakt állományjellemzők attribútumként jelennek meg. A fizikai állomány operációs rendszer szintű, konkrét, a perifériákon megjelenő, az adatokat tartalmazó állomány. Egy állomány funkció szerint lehet: Input állomány, Output állomány, Input-Output állomány. Az I/O során adatok mozognak a tár és a periféria között. Kérdés, hogy az adatmozgatás közben történik-e konverzió. Ennek megfelelően kétféle adatátviteli mód létezik: folyamatos(van konverzió) vagy a bináris másnéven rekord módú(nincs konverzió). A folyamatos módú átvitelnél a tárban és a periférián eltér a reprezentáció. A nyelvekben három alapvető eszközrendszer alakult ki: formátumos módú adatátvitel, szerkesztett módú adatátvitel, listázott módú adatátvitel. A bináris adatátvitelnél az adatok a tárban és a periférián ugyanúgy jelennek meg, ez csak a háttértáraknál való kommunikációnál jöhet szóba. Az átvitel alapja itt a rekord. Ha állományokkal akarunk dolgozni, akkor a következőket kell végrehajtanunk: Deklaráció: A logikai állományt mindig deklarálni kell, el kell látni a megfelelő névvel és attribútumokkal. Összerendelés: A logikai állománynak megfeleltetünk egy fizikai állományt a háttértáron. Állomány megnyitása: Egy álománnyal csak akkor tudunk dolgozni, ha megnyitottuk. Feldolgozás: Ha az állományt megnyitottuk, akkor abba írhatunk, vagy olvashatunk belőle. Lezárás: A lezárás operációs rendszer rutinokat aktivizál, meszünteti a kapcsolatot a logikai és a fizikai állomány között. Az implicit input állomány a szabvány rendszerbemeneti periféria, az implicit output állomány a szabvány rendszerkimeneti periféria. C-ben az I/O eszközrendszer nem része a nyelvnek. Ezek az utasítások/függvények a standard könyvtárak részei.
+        </para>
+        <para>
+            XI. heti előadás (112. oldal, a "Kivételkezelés" című rész):
+        </para>
+        <para>
+            A kivételkezelés lehetővé teszi, hogy az operációs rendszertől átvegyük a megszakítások kezelését. A kivételek olyan események, amelyek megszakítást okoznak a program futása közben. A kivételkezelés az a tevékenység, amit a program végez, ha egy kivétel következik be. A kivételkezelő egy olyan programrész, amely egy adott kivétel bekövetkezése után lép működésbe. A kivételkezeléssel az eseményvezérlést teszi lehetővé a programozásban. Lehetőségünk van, akár nyelvi szinten is maszkolni a megszakításokat. Egyes kivételek figyelése letiltható vagy engedélyezhető. A kivételeknek általában van neve, és kódja is.
+        </para>
+        <para>
+            Milyen beépített kivételek vannak a nyelvben? Például a memóriaelérés vagy a nullával való osztás stb.
+        </para>
+        <para>
+            Definiálhat-e a programozó saját kivételt? Igen. 
+        </para>
+        <para>
+            Milyenek a kivételkezelő hatáskör szabályai? Van, de ez akár lehet az egész program is.
+        </para>
+        <para>
+            Hogyan folytatódik a program a kivételkezelés után? Futhat tovább, de  hibától függ, hogy le kell állítai(kernel megállítja) vagy le áll magáól. 
+        </para>
+        <para>
+            Van-e a nyelvben beépített kivételkezelő? Igen van.
+        </para>
+    </section>
+    <section>
+        <title>Magas szintű programozási nyelvek 2 by Juhász István (Pici könyv 2)</title> 
+        <para>
+            XI. heti előadás (38. oldal, a "Kivételkezelés a Javaban" című rész):
+        </para>
+        <para>
+            Alapvető eszköze a Java-nak. Használatakor létrejön egy kivétel objektum: vannak kivétel-osztályok és azoknak kivétel-példányai. A "JVM" feladata, hogy megkeressen egy adott objektumnak megfelelő típusú, az adott pontban látható kivételkezelőt, amely kivételkezelő az adott kivételt elkapja. Egy kivételkezelő megfelelő típusú, ha a kivételkezelő típusa megegyezik a kivétel típusával, vagy ha a kivételkezelő típusa őse a kivétel típusának. A láthatóságot, maga a kivételkezelő definiálja, ami egy blokk. A kivételkezelő a tetszőleges kódrészlethez köthető a JAVA-ban, és egymásba ágyazhatóak. JAVA-ban két fajta kivételt különböztetünk meg: az ellenőrzött(egy metódus láthatósági körében léphet fel), és a nem ellenőrzött(ellenőrzése vagy nagyon kényelmetlen vagy lehetetlen) kivételt. Egy módszer fejében tehát meg kell adni, azokat az ellenőrzött kivételeket, melyeket a módszer nem kezel, de futás közben bekövetkezhetnek, ez a "THROW kivételnév_lista" utsaítás segítségével történik. A kivételek kezeléséhez a "java.lang" csomagban definiált ősosztálya "Throwable" objektumai dobhatók el. Két standard alosztály van: az Error(rendszerhibák, ezek nem ellenörzöttek) és a Exception(ellenőrzött kivételek osztálya, innen származtathatunk saját ellnőrzött kivételeket). A "catch" ág teljesen hiányozhat. A típusegyeztetés miatt a felírás sorrendje nagyon lényeges, ugyanis a "catch" ág az ellenőrzött kivételt kapja el az első megfelelő típusú kivételkezelőnél.    
+        </para>
+    </section>           
     <section>
         <title>Programozás bevezetés</title>
         <para>                
@@ -141,5 +177,142 @@
         <para>
             Ez a fejezet az operátokról és azok túlterheléséről szól C++ nyelvben. Az operátorok alapértelmézés szerint az argumentumain hadjtanak végre műveletet, amelyek visszatérési értékével tudunk dolgozni. C++-ban nem lehet új operátorokat létrehozni, azonban majdnem mindet túl lehet terhelni. A túlterhelés célja, hogy bizonyos operátorokat más célra használhassunk, mint az erdeti célja, a programozás megkönnyítése céljából, mint például a bitshift operátor túlterhelése az alapértelmezett IO objektumoknál(cin,cout,cerr).
         </para>
+        <para>
+            IX. heti előadás (73.-90.):
+        </para>
+        <para>
+            A C nyelvben három állomány leíró áll a rendelkezésünkre: "stdin" a standard(alapértelmezett) bemenet, "stdout" a standard kimenet, és az "stderr" pedig a hibakimenet. Ezek mindegyike "File" típusú. Az I/O használatához be kell építenünk az "iostream" állományt. A programban a beolvasást a "cin" objektummal, a kiírtaást pedig a "cout" objektummal végezzük. Érdemes figyelni a "nyilakra", mert az irányükk függ attól, hogy éppen be olvasunk, vagy kiíratunk. A cin állpotát beolvasás után mindig ellenőriznünk kell. Az "ignore" függvény segítségével megadhatjuk, hogy a beolvasás a sor végéig történjen, mert alapból egy írásjel(, . : stb.), illetve a whitespace karakterek megtörik a beolvasást. Megadhatjuk a maximális adatfolyam-méretét a "limits" segítségével. Így megelőzhetjük a beolvasások egymásra futását. A rendszerhívások költsége igen nagy, ezért az adatfolyamokat egy bufferrel látják el. Ezek a bufferek összegyűjtik a karaktersorozatokat, és több "cout" kiírást egy rendszerhívással írnak ki a képernyőre. A buffereket a "flush" segítségével lehet üríteni. Az adatfolyam állapotát az "iostat" típusú tagváltozó jelzi, ennek állapotát az alábbi konstansokkal lehet beállítani: eofbit(adatfolyam elérte az állomány végét), failbit(formátum hibát jelez), badbit(fatális hibát jelez), goodbit(jelzi, hogy minden rendben van). A jelzők beállítását a "clear" tagfüggvény végzi. Nagyon fontos, hogy ha egy adatfolyam bármelyik hibabitje beállítódik, akkor az összes utána következő írási, és olvasási művelet, azon az adatfolyamon hatástalan marad(lefut, de nem tesz semmit). A C++ tartalmaz egy "string" osztályt, amely szükség szerint változtatja a méretét. Ha egy ilyen "stringet" szeretnénk beolvasni, akkor azt a "std::getline" fügvénnyel tehetjük meg, mert a szólözöknél megakadna a beolvasás. Az adatfolyam-objektumoknak vannak tagfügvényeik, amelyekkel beéllíthatjuk az állapotát(olvashatunk, írhatunk, műveleteket végezhetünk). Használhatunk még manipulátorokat is. Az I/O manipulátor egy adatfolyam-módosító speciális objektum. Vannak jelzőbitek is, olyan bitek, amelyeket bállíthatunk, vagy törölhetünk. Minden bithez tartozik egy bináris szám: ebben a bináris számban csak az a bit egyes, ahányadik biten az adott tulajdonságot beállítjuk. A C++ I/O-hoz kapcsolódó jelzőbitek az "ios" nevű osztályban vannak definiálva. Az alábbi dolgokat formázhatjuk: mezőszélesség, a kitöltő karakter, igazítás, az egész számok számrendszere, a lebegőpontos számok formátuma, mutassa-e a "+" jelet, a helykitöltő nullákat, ill. az egész számok számrendszerének alapját, kis- vagy nagybetűk. ha egyik jelzőbit sincs beállítva, akkor az adatfolyam a legjobb formázást próbálja kiválasztani egy adott számra, annak nagyságától függően. A C állománykezelése egy "FILE" típusú leíró köré csoportosul, amelyet az "fopen" függvény ad vissza. A C++ az állománykezeléshez is adatfolyamatokat használ, amelyeket ezúttal az "ifstream" (input file stream), illetve az "ofstream" (output file stream) osztályok reprezentálnak. A kétirányú adatfolyamot  az "fstream" osztály valósítja meg. Az állományok megnyitását a konstruktorok végzik, a lezárását pedig a destruktorok. Ha a konstruktor, vagy a destruktor nem felel meg nekünk, akkor létezik "open", illetve "close" függvény is erre a célra. Az állomány-adatfolyamosztályok ddefiníciói az "fstream" fejlécben találhatók az "std" névtérben. A jelzőbiteket az "ios::" előtaggal kell ellátni. A bemeneti adatfolyamok esetén az olvasási pozícionálást a "get", míg a kimneneti adatfolyamatok esetén az írási pozícionálást a "put" végzi. A "tell" függvények visszatérési típusa a "pos_type", amely nem egész jellegű. A pozíciókat el is tárolhatjuk, ezzeket a "seek" függvényeknek adható. A "cin", "cout", "cerr" és "clog" esetén nem használhatunk pozícionáló függvényeket. Fájlrendszerbeli állomány esetén nem válthatunk akárhogyan az olvasás és az írás között. Általában egy pozícionáló műveletet kell végeznünk.  
+        </para>  
+        <para>
+            IX. heti előadás (165.-178.):
+        </para> 
+        <para>
+            C nyelvben az "enum" és az "int" típus között oda-vissza létezik implicit konverzió. A C++-ban viszont, ha "enum" típusra konvertálunk, akkor jelölnünk kell ezt a típuskonverziót. A C automatikus konverziót biztosít a "void*" típusú pointer és tetszőleges típusú pointer között oda-vissza, a C++-ban ezt a konverziót is ki kell írnunk. Nem konstans referenciára nincs automatikus konverzió inkompatibilis típusok referenciáiról. Referenciát akkor is használunk, ha meg akarjuk takaírtani függvényhívásból eredő másolást. A konstans referencia alkalmazásával nagyobb objektumok átadása esetén jelentős másolási költséget takaríthaunk meg. A típuskonverziós lehetőségek két fontos esetét különböztetjük meg: az öröklés szempontjábl két független típus közti típuskonverzió, és az öröklés hierarchia mentén típuskonverzió. C++-ban ha egy másik típusról szeretnénk konvertálni a mi osztályunk típusára, akkor a konverziós konstruktor jelent megoldást. Ha az osztályunkról szertnénk egy másik típusra konvertálni, akkor a konverziós operátort érdemes használnunk. A konstruktor képes konverziót végrehajtani. A konverziók leggyakoribb hibája, hogy bizonyos kifejezések esetén több megoldás is létezik, és a fordító nem tud választani. Ilyenkor a C++ hibaüzeneteket ad ilyen esetekben. ha a típuskonverziós útvonal nem egyértelmű, akkor fordítási hibát jelent. Ha az adottt pointer, illetve referencia mögött nem olyan leszármazott van, amire konvertálunk, a viselkedés durva futási idejű hiba lesz. Az explicit típuskonverziót C nyelven a kifejezés elé () zárjólelek közé írt új típus megadásával definiálhatjuk. A C++ saját konverziós operátrokat definiál, amelyek jobban kifejezik a típuskonverzió jelentését. Az alábbi operátorok segítenek, hogy pontosabban meg tudjuk adni a konverzió célját: static_cast(statikus típuskonverzió), const_cast(konstans típuskonverzió), dynamic_cast(dinamikus típuskonverzió) és a reinterprent_cast(újraértelmező típuskonverzió). A C stílusú típuskonverzió helyett leggyakrabban a statikus típuskonverziót használjuk. A statikus típuskonverziónak megmaradtak azok a megkötései, amely a C stílusú elődjének pl.:nem konvertálhat struktúrát egész típussá vagy konstans típust nem konstans típussá. Erre van külön típuskonverzió operátor: a konstans típuskonverzió. A konstans típuskonverzió képes egyedül konstans típust nem konstanssá tenni, illetve "volatile" típust nem azzá tenni. A dinamikus típuskonverzió szintén speciális típuskonverziót valósít meg: az öröklési hierarchián lefelé történő konverziókhoz szükséges. Az újraértelmezhető típuskonverzió az implementációfüggő konverziók esetén használható. Általában pointerekre alkalmazzuk. 
+        </para> 
+        <para>
+            XI. heti előadás (187.-197.):
+        </para>
+        <para>
+            A kivételkezelés olyan mechanizmus, amely biztosítja, hogy ha megszakítást detektálunk valahol, akkor a futás a hibakezelő ágon folytatódjon. A megoldás nem csak hiba, hanem bármilyen "kivételes" helyzet esetén használható, ezért hívják kivételkezelésnek. 
+        </para>
+        <programlisting><![CDATA[Egy példa a kivételkezelésre:
+
+    #include <iostream>
+    usning namespace std;
+
+    int main()
+    {
+      try
+      {
+        double d;
+        cout << "Enter a nonzero number: ";
+        cin >> d;
+        if(d == 0)
+        {
+         throw "The number can no be zero.";         
+        }
+        cout << "The reciprocal is: " << 1/d << endl;
+      }
+      catch (const char* exc)
+      {
+        cout << "Error! The error text is: " << exc << endl;
+      }
+      cout << "Done." << endl;
+    }        
+]]></programlisting>
+        <para>
+            Bekérünk a felhasználótól egy nem nulla számot, majd ezt eltároljuk a "d" nevű változóban. Utána a "d" változóban eltárolt számot ellenőrizzük, hogy nem nulla e. Erre kell az "if", ha ez nulla akkor a "throw" segítségével kidobjuk, mint lehetséges hibát. Ha nem nulla, akkor meghatározzuk a reciprokát, és kiíratjuk. A "catch" részben elkapjuk a "throw" által eldobott hibát, és kiírjuk, az "if"-ben megadott mondatot. Mindkét megoldás végén a program kiírja, hogy "Done.". 
+        </para>
+        <programlisting><![CDATA[A kimenet, ha a felhasználó nem nullát ad meg:
+    
+    Enter a nonzero number: 2
+    The reciprocal is: 0,5
+    Done
+]]></programlisting>
+        <programlisting><![CDATA[A kimenet, ha a felhasználó nullát ad meg:
+    
+    Enter a nonzero number: 0
+    Error! The error text is: The number can not be zero.
+    Done.
+]]></programlisting>
+        <para>
+            A "try-catch" blokkok egymásba ágyazhatóak. Így lehetőségünk van arra, hogy bizonyos kivételeket a dobott kivételhez közel, alacsonyabb szinten kapjuk el és kezeljük. Az elkapott kivétel a "throw" kulcsszó paraméter nélküli alkalmazásával újradobható. Egy kivétel dobásakkor annak elkapásáig a függvények hívási láncában felfelé haladva az egyes függvények lokális változói felszabadulnak. Ez a folyamat a hívási verem visszacsévélése.
+        </para>
+        <programlisting><![CDATA[A verem visszacsévélése:
+
+    int main()
+    {
+     try
+     {
+       f1();
+     }
+     catch(const char* errorText)
+     {
+       cerr << errotext << endl;
+     }
+    }
+
+    void f1()
+    {
+      Fifo fifo; //a fifo egy általunk megírt osztály
+      f2();
+      ...
+    }    
+
+    void f2()
+    {
+      int i = 1;
+      throw "error1";
+    }    
+]]></programlisting> 
+        <para>
+            A lépések a példában:
+        </para>
+        <para>
+            Először az "f2" kivételt dob, ezután az "f2"-ben definiált "i" lokális változó felszabadul. Majd az "f1"-ben lefoglalt "Fifo fifo" objektum felszabadul, meghívódik a destruktorra. Végül pedig lefut a "main" függvényben lévő "catch" blokk. 
+        </para> 
+        <para>
+            A kivétel elkapása, és dobása között futhat le kód, mivel meghívódnak a verem visszacsévélése során felszabadított objektumok destruktorai. Fontos, hogy a kivétel dobása, és elkapása között ne dobjunk újabb kivételt, mert az a kivétel kezeletlen marad.
+        </para>
+         <para>
+            XI. heti előadás (211.):
+        </para> 
+        <programlisting><![CDATA[Erőforrás kezelés:
+
+    class MessageHandler
+    {
+     public:
+        void ProcessMessage(istream& is)
+        {
+          Message *pMessage;
+          //Következő üzenet beolvasása.
+          while((pMessage = readNextMessage(is)) != NULL)
+          {
+            try
+            {
+              //Kivételt dobhat!
+              pMessage->Process();
+              // ...
+              // Ha végeztünk, felszabadítjuk a Message objektumot.
+              delete pMessage;
+            }
+            catch(...)
+            {
+              delete pMessage;
+              throw;
+            }
+          }
+        }
+     private:
+       Message* readNextMessage(istream& is)
+       {   ... }
+    };
+]]></programlisting> 
+        <para>
+            Példa magyarázata:
+        </para>
+        <para>
+            A "MessageHandler" egy bemeneti folyamból üzeneteket kiolvasó, és feldolgozó osztály. A "ProcessMessage" tagfüggvénye mindaddig "Message" objektumokat olvas a bemeneti folyamból a "readNextMessage" függvény meghívásával, amíg az "NULL"-al nem tér vissza. "readNextMessage" működése: a new operátorral létrehoz egy "Message"-t, a hozzá tartozó adatokat kiolvassa a folyamból, és visszatér a "Message" objektumra mutató pointerrel. A "ProcessMessage" a "readNextMessage" hívását követően olyan függvényeket hív, melyek feldolgozzák a beolvasott üzenetet, ezt követően pedig a "delete" operátorral felszabadítjuk a "Message" objektumot. Probléma akkor van, ha az üzenet a feldolgozást végző fügvények kivételt dobnak, mert így akkor nem tudjuk felszabadítani az utoljára beolvasott "Message" objektumot. Erre a problémára a megoldás a "try-catch", mivel az üzenet feldolgozása során bármilyen kivétel keletkezik, a "catch"-el elkapjuk, felszabadítjuk a helyileg lefoglalt memóriát, majd újradobjuk a kivételt. A kivétel újradobása nagyon fontos, hiszen ha ezt kihagyjuk, akkor a hiba rejtve marad.
+        </para>        
     </section>        
 </chapter>                
