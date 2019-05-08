@@ -75,4 +75,12 @@
             Gutenberg frissítve.
         </revremark>
     </revision>
+    <revision>
+        <revnumber>0.0.9</revnumber>
+        <date>2019-05-08</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Gutenberg frissítve, illetve könyv leadás előtti végleges formája feltöltésre kerül.
+        </revremark>
+    </revision>
 </revhistory>
