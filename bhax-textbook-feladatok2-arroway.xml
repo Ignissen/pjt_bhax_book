@@ -17,10 +17,43 @@
             Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó: source/labor/polargen)
         </para>
         <para>
-            Megoldás forrása:                
+            Java:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/Main.java">https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/Main.java</link>
+            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/Polar.java">https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/Polar.java</link>
+        </para>
+        <para>
+            C++:                
+        </para>
+        <para>
+            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/main.cpp">https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/main.cpp</link>
+            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/polar.hpp">https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/polar.hpp</link>
+        </para>
+        <para>
+            Az OracleJDK <link xlink:href="http://developer.classpath.org/doc/java/util/Random-source.html">forráskódjában</link> található polártanszformációs normális generátor:
+            <programlisting language="java"><![CDATA[
+public synchronized double nextGaussian()
+ 410:   {
+ 411:     if (haveNextNextGaussian)
+ 412:       {
+ 413:         haveNextNextGaussian = false;
+ 414:         return nextNextGaussian;
+ 415:       }
+ 416:     double v1, v2, s;
+ 417:     do
+ 418:       {
+ 419:         v1 = 2 * nextDouble() - 1; // Between -1.0 and 1.0.
+ 420:         v2 = 2 * nextDouble() - 1; // Between -1.0 and 1.0.
+ 421:         s = v1 * v1 + v2 * v2;
+ 422:       }
+ 423:     while (s >= 1);
+ 424:     double norm = Math.sqrt(-2 * Math.log(s) / s);
+ 425:     nextNextGaussian = v2 * norm;
+ 426:     haveNextNextGaussian = true;
+ 427:     return v1 * norm;
+ 428:   }
+                ]]></programlisting>
         </para>
     </section>  
 
@@ -32,30 +65,30 @@
             (erre utal a feladat neve, hogy Java-ban minden referencia, nincs választás, hogy mondjuk egy
             attribútum pointer, referencia vagy tagként tartalmazott legyen).
             Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a böngészőből GET-es kéréssel
-            (például a böngésző címsorából) kapja meg azt a mintát, amelynek kiszámolja az LZW binfáját! 1
+            (például a böngésző címsorából) kapja meg azt a mintát, amelynek kiszámolja az LZW binfáját!
         </para>
         <para>
             <link xlink:href="https://github.com/Ignissen/pjt_java-servlet">https://github.com/Ignissen/pjt_java-servlet</link>
         </para>
         <para>
-            Megoldás magyarázata:
+            
         </para>
     </section>
 
     <section>
         <title>„Gagyi”</title>
         <para>
-            Az ismert formális 2
+            Az ismert formális 
             <programlisting>
                 <![CDATA[while (x <= t && x >= t && t != x);]]>
             </programlisting> tesztkérdéstípusra adj a szokásosnál
             (miszerint x, t az egyik esetben az objektum által hordozott érték, a másikban meg az objektum
             referenciája) „mélyebb” választ, írj Java példaprogramot mely egyszer végtelen ciklus, más x, t
-            értékekkel meg nem! A példát építsd a JDK Integer.java forrására 3 , hogy a 128-nál inkluzív objektum
+            értékekkel meg nem! A példát építsd a JDK Integer.java forrására, hogy a 128-nál inkluzív objektum
             példányokat poolozza!
         </para>
         <para>
-            Megoldás forrása:
+            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/gagyi.java">https://github.com/Ignissen/pjt_prog2/blob/master/gagyi.java</link>
         </para>
         <para>
             Megoldás magyarázata:
