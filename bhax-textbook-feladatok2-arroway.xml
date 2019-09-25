@@ -17,9 +17,6 @@
             Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó: source/labor/polargen)
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
             Megoldás forrása:                
         </para>
         <para>
@@ -38,7 +35,7 @@
             (például a böngésző címsorából) kapja meg azt a mintát, amelynek kiszámolja az LZW binfáját! 1
         </para>
         <para>
-            Megoldás forrása:
+            <link xlink:href="https://github.com/Ignissen/pjt_java-servlet">https://github.com/Ignissen/pjt_java-servlet</link>
         </para>
         <para>
             Megoldás magyarázata:
