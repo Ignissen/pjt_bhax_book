@@ -33,7 +33,7 @@
         <para>
             Az OracleJDK <link xlink:href="http://developer.classpath.org/doc/java/util/Random-source.html">forráskódjában</link> található polártanszformációs normális generátor:
             <programlisting language="java"><![CDATA[
-public synchronized double nextGaussian()
+ 409:   public synchronized double nextGaussian()
  410:   {
  411:     if (haveNextNextGaussian)
  412:       {
@@ -54,6 +54,7 @@ public synchronized double nextGaussian()
  427:     return v1 * norm;
  428:   }
                 ]]></programlisting>
+            Ahogyan a feladatleírás is írja, a mi általunk megírt polártranszformációs normális generátor kódja nagyon hasonlít az OpenJDK forrásában található forráshoz. Az első szembetűnő különbség a syncronized kulcszó a függvény fejlécében. Ez azt jelenti, hogy az OpenJDK polártranszformációs normális generátorát a külöböző java-szálak nem tudják konkurensen használni, amivel azt a problémát küszöbölik ki, hogy a függvényt egyszerre használó szálak ugyanazt az értéket kapják vissza.
         </para>
     </section>  
 
@@ -102,13 +103,13 @@ public synchronized double nextGaussian()
             conditions-t! https://en.wikipedia.org/wiki/Yoda_conditions
         </para>
         <para>
-            Megoldás videó:
+            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/yoda.java">https://github.com/Ignissen/pjt_prog2/blob/master/yoda.java</link>
         </para>
         <para>
-            Megoldás forrása:                
+            A Yoda condition olyan feltétel, amelyben a konstansot hasonlítjuk változóval. Ez a megszokott ellentéte. A Yoda conditions onnan kapta a nevét, hogy Yoda mester a Star Wars filmekben nem az angol nyelvnek megfelelően alkotta meg a szavainak sorrendjét a mondatokban. A Yoda conditions előnye, hogy így könnyebben lehet egyes hibákat azonosítani a programban, mert így akár fordításkor is jelezheti a fordító a problémát. A hátránya, hogy csökkenti a kód olvashatóságát.
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            Ebben a példában a Yoda condition a "".equals(s) feltétel. Ha nem használnánk a Yoda conditions-t, akkor a program NullPointerExceptionnel leállna, mert a String s értéke nullérték, azaz nem hivatkozhatunk az <function>equals</function> metódusára. Így viszont az üres stringet hasonlítja az s változóval, amely nem okoz futásidejű problémát.
         </para>
     </section> 
 
@@ -120,10 +121,7 @@ public synchronized double nextGaussian()
             melyet szeretném, ha átélnél).
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
+            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/bpp.java">https://github.com/Ignissen/pjt_prog2/blob/master/bpp.java</link>              
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
