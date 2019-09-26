@@ -127,7 +127,12 @@
             <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/bpp.java">https://github.com/Ignissen/pjt_prog2/blob/master/bpp.java</link>              
         </para>
         <para>
-            
+            A programban megvalósított Bailey-Borwein-Plouffe algoritmust a PI szám meghatározására lehet használni, illetve egy tetszőleges kezdőponttól kezdve a PI szám hexadecimális kifejtésére lehet használni. A Pi szám meghatározására a következő képlet (is) alkalmas:
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/bpp-alg1.png" scale="45"/>
+                </imageobject>
+            </mediaobject>
         </para>
     </section>        
 
