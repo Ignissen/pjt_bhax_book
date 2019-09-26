@@ -133,6 +133,18 @@
                     <imagedata fileref="img/bpp-alg1.png" scale="45"/>
                 </imageobject>
             </mediaobject>
+            Ezt a képletet továbbgondolva kapjuk a PI hexadecimális kifejtésének algoritmusát, amely a következő:
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/bpp-alg2.png" scale="45"/>
+                </imageobject>
+            </mediaobject>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/bpp-alg3.png" scale="45"/>
+                </imageobject>
+            </mediaobject>
+            A második képletbe behelyettesítés után kapott értékből kiszámolható, oly módon, hogy ismételve megszorozzuk 16-tal, lejegyezzük a tört rész, majd a a szorzás ereményének egészrésze lesz a PI adott pozíciójában a hexadecimális jegye.
         </para>
     </section>        
 
