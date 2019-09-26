@@ -54,7 +54,7 @@
  427:     return v1 * norm;
  428:   }
                 ]]></programlisting>
-            Ahogyan a feladatleírás is írja, a mi általunk megírt polártranszformációs normális generátor kódja nagyon hasonlít az OpenJDK forrásában található forráshoz. Az első szembetűnő különbség a syncronized kulcszó a függvény fejlécében. Ez azt jelenti, hogy az OpenJDK polártranszformációs normális generátorát a külöböző java-szálak nem tudják konkurensen használni, amivel azt a problémát küszöbölik ki, hogy a függvényt egyszerre használó szálak ugyanazt az értéket kapják vissza.
+            Ahogyan a feladatleírás is írja, a mi általunk megírt polártranszformációs normális generátor kódja nagyon hasonlít az OpenJDK forrásában található forráshoz. Az egyetlen szembetűnő különbség a syncronized kulcszó a függvény fejlécében. Ez azt jelenti, hogy az OpenJDK polártranszformációs normális generátorát a külöböző java-szálak nem tudják konkurensen használni, amivel azt a problémát küszöbölik ki, hogy a függvényt egyszerre használó szálak ugyanazt az értéket kapják vissza.
         </para>
     </section>  
 
@@ -72,7 +72,10 @@
             <link xlink:href="https://github.com/Ignissen/pjt_java-servlet">https://github.com/Ignissen/pjt_java-servlet</link>
         </para>
         <para>
-            
+             Az LZW Bináris Fa működését már a könyv második részének hatodik fejezetében ismertettem. Ezen program átírása C++ nyelvről Java nyelvre tényleg annyiba kerül, hogy a pointereket és referenciákat jelelő operátorokat elhagyjuk a kódból, illetve a Java nyelv sajátosságainak megfelelünk (main függvény egy osztályon belül, fájl nevének meg kell egyeznie az osztály nevével, stb).
+        </para>
+        <para>
+            Ezen felül feladat volt, hogy A Java-s LZW Bináris Fát el lehessen érni böngészőből is GET kéréssel. Ehhez a Java Servletet használtam. Segítségül az Eclipse Enterprise Java-hoz való IDE-jét használtam, illetve egy Tomcat szervert. A Servlet.java fájlban található a GET és POST kéréseket kiszolgáló kód, amely POST kérés esetén hibakódod küld, hogy POST kérés nem támogatott a szerveren. GET kérés esetén létrehoz egy Binfa objektumot, a bementi string alapján felépíti a bináris fát, majd a kérésben megadott bajárási metódussal(preorder, inorder, postorder) bejárja a fát. A servlet a GET kéréseket HTML formátumban szolgálja ki. Ehhez a Binfa osztályon belül létrehoztam még két metódust. Az egyik feladata, hogy beállíthassuk, hogy hova szeretnénk, ha a program írna (jelen esetben ez lehet a System.out vagy pedig a request objektum). A másik metódus pedig a <function >writeHTMl</function>, amelynek a célja, hogy meghívja a megfelelő bejárási metódust, amely kiírja a kiválaszott kimenetre a bináris fát, illetve egyéb adatokat róla. Amennyiben nem adunk meg a kérésben paramétereket, vagy rosszakat adunk meg, a program nem fog hibával kilépni, hanem alapértelmezett értékekkel fog lefutni.
         </para>
     </section>
 
@@ -92,7 +95,7 @@
             <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/gagyi.java">https://github.com/Ignissen/pjt_prog2/blob/master/gagyi.java</link>
         </para>
         <para>
-            Megoldás magyarázata:
+            A programrészletben látható while ciklus lehet végtelen ciklus is, de más esetben hamis lesz a feltétel, így kilép. Ez azért következik be, mert a feltétel első két tagjában az objektumok által hordozott értékekre hivatkozik, amely különböző értékű x és t változó esetén hamis lesz. Viszont, ha azonos az x és t értéke, akkor a féltétel első két tagja igaz lesz, ezáltal a harmadik tagon múlik az igazságérték. A Java Integer osztálya poolozza a 128-nál kisebb értékű Integer objektumokat. Ez azt jelenti, hogy ha két Integer objektumnak 128 alatti azonos értéket adunk, akkor a két objektum ugyanarra a memóriaterületre fog hivatkozni. Viszont, ha már 128-nál nagyobb azonos értékeket adunk a két objetumnak, akkor már nem lesznek poolozva. A programrészletben lévő feltétel tehát igaz lesz, mert a != operátor már nem az objektumok által hordozott értékekre hivatkozik, hanem magára az objektumok referenciájára.
         </para>
     </section>
 
@@ -124,7 +127,7 @@
             <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/bpp.java">https://github.com/Ignissen/pjt_prog2/blob/master/bpp.java</link>              
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            
         </para>
     </section>        
 
