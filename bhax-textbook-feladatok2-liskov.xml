@@ -105,7 +105,7 @@
         <para>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="img/cyclomatic_complexity_polartransz.png" scale="45"/>
+                    <imagedata fileref="img/cyclomatic_complexity_polartransz.png" scale="70"/>
                 </imageobject>
             </mediaobject>
             A képen látható weboldal elérhető <link xlink:href="http://www.lizard.ws/">itt</link>.
