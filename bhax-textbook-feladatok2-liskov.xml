@@ -1,150 +1,86 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
     <info>
-        <title>Helló, Arroway!</title>
+        <title>Helló, Liskov!</title>
         <keywordset>
             <keyword/>
         </keywordset>
     </info>
 
     <section>
-        <title>OOP szemlélet</title>
+        <title>Liskov helyettesítés sértése</title>
         <para>
-            A módosított polártranszformációs normális generátor beprogramozása Java nyelven. Mutassunk rá,
-            hogy a mi természetes saját megoldásunk (az algoritmus egyszerre két normálist állít elő, kell egy
-            példánytag, amely a nem visszaadottat tárolja és egy logikai tag, hogy van-e tárolt vagy futtatni kell
-            az algot.) és az OpenJDK, Oracle JDK-ban a Sun által adott OO szervezés ua.!
-            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_5.pdf (16-22 fólia)
-            Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó: source/labor/polargen)
+            Írjunk olyan OO, leforduló Java és C++ kódcsipetet, amely megsérti a Liskov elvet! Mutassunk rá a
+            megoldásra: jobb OO tervezés.
+            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_1.pdf (93-99 fólia)
+            (számos példa szerepel az elv megsértésére az UDPROG repóban, lásd pl. source/binom/BatfaiBarki/madarak/)
         </para>
         <para>
-            Java:                
+            Források: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes">https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes</link>
         </para>
         <para>
-            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/Main.java">https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/Main.java</link>
-            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/Polar.java">https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/Polar.java</link>
-        </para>
-        <para>
-            C++:                
-        </para>
-        <para>
-            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/main.cpp">https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/main.cpp</link>
-            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/polar.hpp">https://github.com/Ignissen/pjt_prog2/blob/master/polartransz/polar.hpp</link>
-        </para>
-        <para>
-            Az OracleJDK <link xlink:href="http://developer.classpath.org/doc/java/util/Random-source.html">forráskódjában</link> található polártanszformációs normális generátor:
-            <programlisting language="java"><![CDATA[
- 409:   public synchronized double nextGaussian()
- 410:   {
- 411:     if (haveNextNextGaussian)
- 412:       {
- 413:         haveNextNextGaussian = false;
- 414:         return nextNextGaussian;
- 415:       }
- 416:     double v1, v2, s;
- 417:     do
- 418:       {
- 419:         v1 = 2 * nextDouble() - 1; // Between -1.0 and 1.0.
- 420:         v2 = 2 * nextDouble() - 1; // Between -1.0 and 1.0.
- 421:         s = v1 * v1 + v2 * v2;
- 422:       }
- 423:     while (s >= 1);
- 424:     double norm = Math.sqrt(-2 * Math.log(s) / s);
- 425:     nextNextGaussian = v2 * norm;
- 426:     haveNextNextGaussian = true;
- 427:     return v1 * norm;
- 428:   }
-                ]]></programlisting>
-            Ahogyan a feladatleírás is írja, a mi általunk megírt polártranszformációs normális generátor kódja nagyon hasonlít az OpenJDK forrásában található forráshoz. Az egyetlen szembetűnő különbség a syncronized kulcszó a függvény fejlécében. Ez azt jelenti, hogy az OpenJDK polártranszformációs normális generátorát a külöböző java-szálak nem tudják konkurensen használni, amivel azt a problémát küszöbölik ki, hogy a függvényt egyszerre használó szálak ugyanazt az értéket kapják vissza.
+            <blockquote> <attribution>A liskov helyettesítési elv</attribution>
+                    Ha S altípusa T-nek, akkor minden olyan helyen ahol T-t felhasználjuk S-t is minden gond nélkül behelyettesíthetjük anélkül, hogy a programrész tulajdonságai megváltoznának.
+            </blockquote>
         </para>
     </section>  
 
     <section>
-        <title>Homokozó</title>
+        <title>Szülő-gyerek</title>
         <para>
-            Írjuk át az első védési programot (LZW binfa) C++ nyelvről Java nyelvre, ugyanúgy működjön!
-            Mutassunk rá, hogy gyakorlatilag a pointereket és referenciákat kell kiirtani és minden máris működik
-            (erre utal a feladat neve, hogy Java-ban minden referencia, nincs választás, hogy mondjuk egy
-            attribútum pointer, referencia vagy tagként tartalmazott legyen).
-            Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a böngészőből GET-es kéréssel
-            (például a böngésző címsorából) kapja meg azt a mintát, amelynek kiszámolja az LZW binfáját!
+            Írjunk Szülő-gyerek Java és C++ osztálydefiníciót, amelyben demonstrálni tudjuk, hogy az ősön
+            keresztül csak az ős üzenetei küldhetőek!
+            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_1.pdf (98. fólia)
         </para>
         <para>
-            <link xlink:href="https://github.com/Ignissen/pjt_java-servlet">https://github.com/Ignissen/pjt_java-servlet</link>
+            Források: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes/szulo_gyerek">https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes/szulo_gyerek</link>
         </para>
         <para>
-             Az LZW Bináris Fa működését már a könyv második részének hatodik fejezetében ismertettem. Ezen program átírása C++ nyelvről Java nyelvre tényleg annyiba kerül, hogy a pointereket és referenciákat jelelő operátorokat elhagyjuk a kódból, illetve a Java nyelv sajátosságainak megfelelünk (main függvény egy osztályon belül, fájl nevének meg kell egyeznie az osztály nevével, stb).
-        </para>
-        <para>
-            Ezen felül feladat volt, hogy A Java-s LZW Bináris Fát el lehessen érni böngészőből is GET kéréssel. Ehhez a Java Servletet használtam. Segítségül az Eclipse Enterprise Java-hoz való IDE-jét használtam, illetve egy Tomcat szervert. A Servlet.java fájlban található a GET és POST kéréseket kiszolgáló kód, amely POST kérés esetén hibakódod küld, hogy POST kérés nem támogatott a szerveren. GET kérés esetén létrehoz egy Binfa objektumot, a bementi string alapján felépíti a bináris fát, majd a kérésben megadott bajárási metódussal(preorder, inorder, postorder) bejárja a fát. A servlet a GET kéréseket HTML formátumban szolgálja ki. Ehhez a Binfa osztályon belül létrehoztam még két metódust. Az egyik feladata, hogy beállíthassuk, hogy hova szeretnénk, ha a program írna (jelen esetben ez lehet a System.out vagy pedig a request objektum). A másik metódus pedig a <function >writeHTMl</function>, amelynek a célja, hogy meghívja a megfelelő bejárási metódust, amely kiírja a kiválaszott kimenetre a bináris fát, illetve egyéb adatokat róla. Amennyiben nem adunk meg a kérésben paramétereket, vagy rosszakat adunk meg, a program nem fog hibával kilépni, hanem alapértelmezett értékekkel fog lefutni.
+            
         </para>
     </section>
 
     <section>
-        <title>„Gagyi”</title>
+        <title>Anti OO</title>
         <para>
-            Az ismert formális 
-            <programlisting>
-                <![CDATA[while (x <= t && x >= t && t != x);]]>
-            </programlisting> tesztkérdéstípusra adj a szokásosnál
-            (miszerint x, t az egyik esetben az objektum által hordozott érték, a másikban meg az objektum
-            referenciája) „mélyebb” választ, írj Java példaprogramot mely egyszer végtelen ciklus, más x, t
-            értékekkel meg nem! A példát építsd a JDK Integer.java forrására, hogy a 128-nál inkluzív objektum
-            példányokat poolozza!
+            A BBP algoritmussal
+            a Pi hexadecimális kifejtésének a 0. pozíciótól számított 106, 107, 108 darab
+            jegyét határozzuk meg C, C++, Java és C# nyelveken és vessük össze a futási időket!
+            https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apas03.html#id561066
         </para>
         <para>
-            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/gagyi.java">https://github.com/Ignissen/pjt_prog2/blob/master/gagyi.java</link>
         </para>
         <para>
-            A programrészletben látható while ciklus lehet végtelen ciklus is, de más esetben hamis lesz a feltétel, így kilép. Ez azért következik be, mert a feltétel első két tagjában az objektumok által hordozott értékekre hivatkozik, amely különböző értékű x és t változó esetén hamis lesz. Viszont, ha azonos az x és t értéke, akkor a féltétel első két tagja igaz lesz, ezáltal a harmadik tagon múlik az igazságérték. A Java Integer osztálya poolozza a 128-nál kisebb értékű Integer objektumokat. Ez azt jelenti, hogy ha két Integer objektumnak 128 alatti azonos értéket adunk, akkor a két objektum ugyanarra a memóriaterületre fog hivatkozni. Viszont, ha már 128-nál nagyobb azonos értékeket adunk a két objetumnak, akkor már nem lesznek poolozva. A programrészletben lévő feltétel tehát igaz lesz, mert a != operátor már nem az objektumok által hordozott értékekre hivatkozik, hanem magára az objektumok referenciájára.
+            
         </para>
     </section>
 
     <section>
-        <title>Yoda</title>
+        <title>Hello, Android!</title>
         <para>
-            Írjunk olyan Java programot, ami java.lang.NullPointerEx-el leáll, ha nem követjük a Yoda
-            conditions-t! https://en.wikipedia.org/wiki/Yoda_conditions
+            Élesszük fel az SMNIST for Humans projektet!
+            https://gitlab.com/nbatfai/smnist/tree/master/forHumans/SMNISTforHumansExp3/app/src/main
+            Apró módosításokat eszközölj benne, pl. színvilág.
         </para>
         <para>
-            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/yoda.java">https://github.com/Ignissen/pjt_prog2/blob/master/yoda.java</link>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/SMNIST">https://github.com/Ignissen/SMNIST</link>
         </para>
         <para>
-            A Yoda condition olyan feltétel, amelyben a konstansot hasonlítjuk változóval. Ez a megszokott ellentéte. A Yoda conditions onnan kapta a nevét, hogy Yoda mester a Star Wars filmekben nem az angol nyelvnek megfelelően alkotta meg a szavainak sorrendjét a mondatokban. A Yoda conditions előnye, hogy így könnyebben lehet egyes hibákat azonosítani a programban, mert így akár fordításkor is jelezheti a fordító a problémát. A hátránya, hogy csökkenti a kód olvashatóságát.
-        </para>
-        <para>
-            Ebben a példában a Yoda condition a "".equals(s) feltétel. Ha nem használnánk a Yoda conditions-t, akkor a program NullPointerExceptionnel leállna, mert a String s értéke nullérték, azaz nem hivatkozhatunk az <function>equals</function> metódusára. Így viszont az üres stringet hasonlítja az s változóval, amely nem okoz futásidejű problémát.
+            
         </para>
     </section> 
 
     <section>
-        <title>A BPP algoritmus Java megvalósítása</title>
+        <title>Ciklomatikus komplexitás</title>
         <para>
-            Induljunk ki ebből a tudományos közleményből: http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf és csak ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus megvalósítását!
-            Ha megakadsz, de csak végső esetben: https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#pi_jegyei (mert ha csak lemásolod, akkor pont az a fejlesztői élmény marad ki,
-            melyet szeretném, ha átélnél).
+            Számoljuk ki valamelyik programunk függvényeinek ciklomatikus komplexitását! Lásd a fogalom
+            tekintetében a https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_2.pdf (77-79
+            fóliát)!
         </para>
         <para>
-            <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/bpp.java">https://github.com/Ignissen/pjt_prog2/blob/master/bpp.java</link>              
+            
         </para>
         <para>
-            A programban megvalósított Bailey-Borwein-Plouffe algoritmust a PI szám meghatározására lehet használni, illetve egy tetszőleges kezdőponttól kezdve a PI szám hexadecimális kifejtésére lehet használni. A Pi szám meghatározására a következő képlet (is) alkalmas:
-            <mediaobject>
-                <imageobject>
-                    <imagedata fileref="img/bpp-alg1.png" scale="45"/>
-                </imageobject>
-            </mediaobject>
-            Ezt a képletet továbbgondolva kapjuk a PI hexadecimális kifejtésének algoritmusát, amely a következő:
-            <mediaobject>
-                <imageobject>
-                    <imagedata fileref="img/bpp-alg2.png" scale="45"/>
-                </imageobject>
-            </mediaobject>
-            <mediaobject>
-                <imageobject>
-                    <imagedata fileref="img/bpp-alg3.png" scale="45"/>
-                </imageobject>
-            </mediaobject>
-            A második képletbe behelyettesítés után kapott értékből kiszámolható, oly módon, hogy ismételve megszorozzuk 16-tal, lejegyezzük a tört rész, majd a a szorzás ereményének egészrésze lesz a PI adott pozíciójában a hexadecimális jegye.
+            
         </para>
     </section>        
 
