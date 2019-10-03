@@ -18,9 +18,13 @@
             Források: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes">https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes</link>
         </para>
         <para>
-            <blockquote> <attribution>A liskov helyettesítési elv</attribution>
-                    Ha S altípusa T-nek, akkor minden olyan helyen ahol T-t felhasználjuk S-t is minden gond nélkül behelyettesíthetjük anélkül, hogy a programrész tulajdonságai megváltoznának.
-            </blockquote>
+            A Liskov helyettesítési elv kimanjda, hogy ha S altípusa T-nek, akkor minden olyan helyen ahol T-t felhasználjuk S-t is minden gond nélkül behelyettesíthetjük anélkül, hogy a programrész tulajdonságai megváltoznának.
+        </para>
+        <para>
+            A feladat az volt, hogy írnunk kell Javaban és C++-ban olyan programokat, amelyek lefordulnak és lefutnak, viszont megsértik a Liskov elvet. Erre példa a két program. A programok szerint a pingvin is tud repülni, mivel madár. Mivel a számítógép nem tudja ismeri a madarakat, azért a Penguin típusó objektumunk is tud repülni. A programok lefordulnak és a számítógép szemszögéből hibátlanul lefutnak, viszont mi emberek tudjuk, hogy óriási szemantikai hiba van a programban, ugyanis a pingvinek röpképtelen madarak.
+        </para>
+        <para>
+            A probléma kiküszöbölésére az egyetlen lehetséges, de nem biztos, megoldás, hogy jobban megtervezzük az osztályainkat. <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/liskov_sertes/liskov_betart.cpp">Ebben</link> a programban igyekeztem elhárítani az előző részletben leírt problémát. Ebben a programban a Bird osztályban létrehoztam a move_preferred metódust, amely az adott madár által preferált helyváltoztatási cselekvést írja le (ebben a példában ez repülés, úszás vagy futás lehet). Létrehoztam két osztály a röpképes és röpképtelen madarak leírására, amelyben a repülő madarakéban a move_preferred metódust override-oltam, viszont a röpképtelen madarakat leíró osztályban még nem, ugyanis, ha nem tud repülni, attól még választhatja az úszást vagy a futást is, így ezeket az aktuális madárnak megfelelően implementáltam.
         </para>
     </section>  
 
@@ -35,7 +39,7 @@
             Források: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes/szulo_gyerek">https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes/szulo_gyerek</link>
         </para>
         <para>
-            
+            Ebben a feladatban azt kell prezentálnunk, hogy az ős osztályok objektumai csak az ős osztályok metódusait és mezőit használhatják. A források a jelenlegi formájukban nem fordulnak le sem, ugyanis a fordítók tisztában vannak a feladat alapfeltevésével. A Parent osztálynak van egy print metódusa, amely kiírja, hogy "Parent". A Child osztálynak szintén van egy print metódusa, amely azt írja ki, hogy "Child". Eddig nincs is baja a fordítónak, ez így helyes és működőképes. A Child osztálynak viszont van még egy add metódusa, amely vár két int típusú paramétert, majd visszaadja az összegüket. Mivel a main függvényben Parent* típusú objektumokat hozok létre, ezért a c objektumban nem találja az add metódust a fordító, ezért nem is fordul le.
         </para>
     </section>
 
@@ -63,9 +67,24 @@
         </para>
         <para>
             Megoldás: <link xlink:href="https://github.com/Ignissen/SMNIST">https://github.com/Ignissen/SMNIST</link>
+            A megoldásomban jelentősen segített Racs Tamás az UDPROG Facebook csoportban található posztjával.
         </para>
         <para>
-            
+            Mivel az android studio vlamiért nem szeretett volna együttműködni importálás során, ezért létrehoztam egy új projektet, majd létrehoztam a szükséges forrásfájlokat. A forrsáfájlokba bemásoltam az eredeti forrásfájlak tartalmát, majd a package-et az aktuális projectnek megfelelően módosítottam. Ezután szükség volt az AndroidManifest.xml fájl módosítására, amelyben a következő kódot helyzetem el:
+            <programlisting>
+                <![CDATA[
+<activity android:name=".SMNISTE3Activity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+                ]]>
+            </programlisting>
+            Ezután a activity_smniste3.xml fájlban kellet módosítanom a SMNISTSurfaceView osztály elérési útvonalát. Innentől futtatható a project akár a virtuális android eszközön, akár saját mobilunkon is.
+        </para>
+        <para>
+            Feladat volt még, hogy apró módosításokat végezzünk a programon. Én a program színein változtattam kicsit, ez az SMNISTSurfaceView osztály <function>cinit</function> metódusának elején lehetséges.
         </para>
     </section> 
 
