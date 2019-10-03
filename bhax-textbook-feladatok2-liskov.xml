@@ -70,7 +70,7 @@
             A megoldásomban jelentősen segített Racs Tamás az UDPROG Facebook csoportban található posztjával.
         </para>
         <para>
-            Mivel az android studio vlamiért nem szeretett volna együttműködni importálás során, ezért létrehoztam egy új projektet, majd létrehoztam a szükséges forrásfájlokat. A forrsáfájlokba bemásoltam az eredeti forrásfájlak tartalmát, majd a package-et az aktuális projectnek megfelelően módosítottam. Ezután szükség volt az AndroidManifest.xml fájl módosítására, amelyben a következő kódot helyzetem el:
+            Mivel az android studio valamiért nem szeretett volna együttműködni importálás során, ezért létrehoztam egy új projektet, majd létrehoztam a szükséges forrásfájlokat. A forrsáfájlokba bemásoltam az eredeti forrásfájlak tartalmát, majd a package-et az aktuális projectnek megfelelően módosítottam. Ezután szükség volt az AndroidManifest.xml fájl módosítására, amelyben a következő kódot helyzetem el:
             <programlisting>
                 <![CDATA[
 <activity android:name=".SMNISTE3Activity">
@@ -81,7 +81,7 @@
 </activity>
                 ]]>
             </programlisting>
-            Ezután a activity_smniste3.xml fájlban kellet módosítanom a SMNISTSurfaceView osztály elérési útvonalát. Innentől futtatható a project akár a virtuális android eszközön, akár saját mobilunkon is.
+            Ezután a activity_smniste3.xml fájlban kellet módosítanom a SMNISTSurfaceView osztály elérési útvonalát. Innentől futtatható a project akár a virtuális android eszközön, akár a saját androidos mobilunkon is.
         </para>
         <para>
             Feladat volt még, hogy apró módosításokat végezzünk a programon. Én a program színein változtattam kicsit, ez az SMNISTSurfaceView osztály <function>cinit</function> metódusának elején lehetséges.
@@ -99,7 +99,17 @@
             
         </para>
         <para>
-            
+            A ciklomatikus komplexitás a vezérlési gráfban megtalálható független utak maximális száma. Két út független, ha mindkettőben létezik olyan pont vagy él, amelyik nem eleme a másik útnak. Alkotója Thomas McCabe, gyakran nevezik McCabe-komplexitásnak is.
+            A ciklomatikus komplexitás értéke: M = E − N + 2P, ahol E a gráf éleinek száma, N a gráfban lévő csúcsok száma, P az összefüggő komponensek száma.
+        </para>
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/cyclomatic_complexity_polartransz.png" scale="45"/>
+                </imageobject>
+            </mediaobject>
+            A képen látható weboldal elérhető <link xlink:href="http://www.lizard.ws/">itt</link>.
+            Ebben a feladatban a módosított polártranszformációs generátor "lényeges" részét veszem alanyul. A képen látható, hogy a <function>nextGaussian</function> metódus ciklomatikus komplexitása 3. A metódus ciklomatikus komplexitását 2-re növeli a metódus legelején lévő elágazás. Ez azért van, mert az elágazás két lehetséges kimenete egymástól független végrahajtási ágban vannak. Majd tovább növeli a ciklomatikus komplexitást az elágazás else ágában található do-while ciklus 3-ra. A do-while ciklus azért növeli a komplexitást, mert a for ciklus is a vezérlés szempontjából egy elágazás, amely után a vezértlés vagy belép a ciklusba vagy pedig a ciklus után folytatódik.
         </para>
     </section>        
 
