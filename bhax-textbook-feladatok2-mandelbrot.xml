@@ -17,7 +17,15 @@
             Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/mandelbrot/UMLFromCode"> https://github.com/Ignissen/pjt_prog2/tree/master/mandelbrot/UMLFromCode</link>
         </para>
         <para>
-            A megoldáshoz az Umbrello nevű programot használtam, amelyet a KDE fejleszt. A feladat az első védési programból UML diagramm generálása volt, amelyre az Umbrello tökéletesen alkalmas. A z3a7.cpp-t a kódimportálási varázslóval betöltöttem a programba, ahol meg kellett adnom, hogy a cpp kiterjesztésű fájlokat is keresse. Ezután annyi volt a dolgom, hogy a fa-struktúra fülre kattintás után drag and drop módszerrel behúzom az osztályokat a rajzolási területre, ahol a program automatikusan létrehozza a megfelelő kapcsolatokat az osztályok között.
+            A megoldáshoz az Umbrello nevű programot használtam, amelyet a KDE fejleszt. A feladat az első védési programból UML diagramm generálása volt, amelyre az Umbrello tökéletesen alkalmas. A z3a7.cpp-t a kódimportálási varázslóval betöltöttem a programba, ahol meg kellett adnom, hogy a cpp kiterjesztésű fájlokat is keresse. Ezután annyi volt a dolgom, hogy a fa-struktúra fülre kattintás után drag and drop módszerrel behúzom az osztályokat a rajzolási területre, ahol a program automatikusan létrehozza a megfelelő kapcsolatokat az osztályok között. A képen látható az Umbrello által generált UML az LZW Bináris Fa programból.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/LZWBinfaUML.png" scale="100"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+        <para>
+            Feladat volt még a kompozíció és az aggregáció kapcsolatára a forráskódban. Az UML-ben a komozíciót a kitöltött rombusz szimbolizálja, míg az aggregációt a kitöltetlen. Kompozícióra példa az LZWBinfa osztályban a root mező, amely a Csomopont osztály létezését összeköti az LZWBinfa osztály létezésével, illetve egyik sem létezhet a másik nélkül. Viszont az aggregációra példa a fa mező az LZWBinfa osztályban, ugyanis annál nem követelmény, hogy létezzen a Csomópont osztály.
         </para>
     </section>  
 
@@ -27,10 +35,15 @@
             UML-ben tervezzünk osztályokat és generáljunk belőle forrást!
         </para>
         <para>
-            Források: 
+            Források: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/mandelbrot/CodeFromUML">https://github.com/Ignissen/pjt_prog2/tree/master/mandelbrot/CodeFromUML </link>
         </para>
         <para>
-            
+            A feladat megoldásához az Eclipse UML-t használtam, pontosabban az Eclipse Papyrus-t. A linken elérhető github könyvtárban a CodeFromUML könyvtár tartalmazza a Papyrus projektet, amelyben létrehoztam a programom UML diagrammját, majd az Eclipse egy bővítményével generáltattam le a forráskódot az UML alapján. Ez található a org.eclipse.papyrus.cppgen.CodeFromUML könyvtárban. A generált forráskódot kiegészítettem, hogy egy működő programot tölthessek fel. Maga a program egy <emphasis role="strong">nagyon</emphasis> egyszerű RPG játék.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/CodeFromUML.png" scale="90"/>
+                </imageobject>
+            </mediaobject>
         </para>
     </section>
 
@@ -54,9 +67,20 @@
         </para>
         <para>
             Megoldás: 
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/diagram.png"  scale="65"/>
+                </imageobject>
+            </mediaobject>
         </para>
         <para>
-            
+            A Business Process Model and Notation (BPMN) egy grafikus reprezentáció vállalati modellek és folyamatok bemutatására. 
+        </para>
+        <para>
+            A modellben az egyszeres vékony körvonalú kör jelzi a kiindulási pontot. A kétszeres körvonalú kör jelzi a kiindulás és a végpont közötti köztes cselekvéseket/eseményeket. A 45 fokkal elforgatott négyzet jelzi az elágazásokat a folyamatban. Az egyszeres vastag körvonalú kör jelzi a folyamat végét.
+        </para>
+        <para>
+            Ez a folyamatábra azt mutatja be, hogy hogyan dolgozom fel a könyv egyes feladatait.
         </para>
     </section> 
 
@@ -68,6 +92,7 @@
         </para>
         <para>
             Megoldás: 
+            
         </para>
         <para>
             
