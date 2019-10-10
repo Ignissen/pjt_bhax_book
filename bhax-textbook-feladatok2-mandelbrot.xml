@@ -1,0 +1,113 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Mandelbrot!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+
+    <section>
+        <title>Reverse engineering UML osztálydiagram</title>
+        <para>
+            UML osztálydiagram rajzolása az első védési C++ programhoz. Az osztálydiagramot a forrásokból
+            generáljuk (pl. Argo UML, Umbrello, Eclipse UML) Mutassunk rá a kompozíció és aggregáció
+            kapcsolatára a forráskódban és a diagramon, lásd még: https://youtu.be/Td_nlERlEOs.
+        </para>
+        <para>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/mandelbrot/UMLFromCode"> https://github.com/Ignissen/pjt_prog2/tree/master/mandelbrot/UMLFromCode</link>
+        </para>
+        <para>
+            A megoldáshoz az Umbrello nevű programot használtam, amelyet a KDE fejleszt. A feladat az első védési programból UML diagramm generálása volt, amelyre az Umbrello tökéletesen alkalmas. A z3a7.cpp-t a kódimportálási varázslóval betöltöttem a programba, ahol meg kellett adnom, hogy a cpp kiterjesztésű fájlokat is keresse. Ezután annyi volt a dolgom, hogy a fa-struktúra fülre kattintás után drag and drop módszerrel behúzom az osztályokat a rajzolási területre, ahol a program automatikusan létrehozza a megfelelő kapcsolatokat az osztályok között.
+        </para>
+    </section>  
+
+    <section>
+        <title>Forward engineering UML osztálydiagram</title>
+        <para>
+            UML-ben tervezzünk osztályokat és generáljunk belőle forrást!
+        </para>
+        <para>
+            Források: 
+        </para>
+        <para>
+            
+        </para>
+    </section>
+
+    <section>
+        <title>Egy esettan</title>
+        <para>
+            A BME-s C++ tankönyv 14. fejezetét (427-444 elmélet, 445-469 az esettan) dolgozzuk fel!
+        </para>
+        <para>
+        </para>
+        <para>
+            
+        </para>
+    </section>
+
+    <section>
+        <title>BPMN</title>
+        <para>
+            Rajzoljunk le egy tevékenységet BPMN-ben!
+            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_7.pdf (34-47 fólia)
+        </para>
+        <para>
+            Megoldás: 
+        </para>
+        <para>
+            
+        </para>
+    </section> 
+
+    <section>
+        <title>BPEL</title>
+        <para>
+                Egy visszhang folyamat megvalósítása az alábbi teljes „videó tutoriál” alapján:
+                https://youtu.be/0OnlYWX2v_I
+        </para>
+        <para>
+            Megoldás: 
+        </para>
+        <para>
+            
+        </para>
+    </section>
+
+    <section>
+        <title>TeX UML</title>
+        <para>
+            Valamilyen TeX-es csomag felhasználásával készíts szép diagramokat az OOCWC projektről (pl.
+            use case és class diagramokat).
+        </para>
+        <para>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/mandelbrot/TeX-UML">https://github.com/Ignissen/pjt_prog2/tree/master/mandelbrot/TeX-UML</link>
+        </para>
+        <para>
+            A megoldáshoz LaTeX-et használtam, illetve ahhoz a TikZ és TikZ-UML csomagokat.
+        </para>
+        <para>
+            Az előző feladatokban megismert UML jelölések alapján készítettem el a diagrammokat LaTeX-ben, a forráshoz egy kis magyarázat:
+            <programlisting>
+                <![CDATA[
+\begin{umlpackage}[paraméterek]{Név} -- Ezzel a paranccsal lehet létrehozni a diagrammon egy csomagot, ebben a projektben a különböző névtereket szimbolizálja, ennek vagy egy \end{umlpackage} záró párja is. A szögletes zárójelek között meg lehet adni akár x és y koordinátákat, hogy hova helyezze el a képen. Ez a többi parancsra is igaz.
+\umlclass[paraméterek]{Név}{Mezők}{Metódusok} -- Ezzel lehet létrehozni a diagrammon egy osztályt. A megjelenítéskor a diagrammon legfelül megjelenik az osztály neve, alatta jelennek meg az osztály mezői, majd ezalatt a metódusok.
+\umlemptyclass[paraméterek]{Név} -- Ezzel üres osztályokat létrehozni, amelyek csak névvel rendelkeznek. Ezt akkor használtam, amikor olyan osztályból történt öröklődés, amely nincs benne a projekt könyvtárában.
+\umlassoc[paraméterek]{Osztály1}{Osztály2} -- Ezzel a paranccsal az osztályok közötti asszociációkat lehet jelölni egy egyenessel a két osztály között a diagrammon
+\umluniassoc[paraméterek]{Osztály1}{Osztály2} -- Ez közel azonos az előzővel, csak itt irányított asszociációt hozunk létre a diagrammon, amely a használótól indul a használthoz.
+\umlaggreg[paraméterek]{Osztály1}{Osztály2} -- Ezzel az osztályok közötti aggregációkat lehet jelölni a diagrammon
+\umlinherit[paraméterek]{Gyerekosztály}{Szülőosztály} -- Ezzel az osztályok közötti öröklődéseket lehet jelölni a diagrammon. A nyíl a gyermekosztálytól tart a szülőosztályig.
+
+                ]]>
+            </programlisting>
+            Ha ezeket ismerjük, utána már csak a forráskódokat kell alaposan elolvasni és az alapján generálhatjuk is az UML diagrammot. Viszont ez egy igencsak hosszadalmas folyamat, legalábbis nekem közel 10 órába került.
+        </para>
+        <para>
+            A megoldás linkjére kattintva megnyílik a github repómban a projektet tartalmazó mappa, amelyben megtalálható a forrás, illetve a projekt leírásában leírtam, hogyan kell a projektből pdf-et generálni, illetve a pdf-ből png-t, valamint elhelyeztem egy képet a kész UML diagrammról.
+        </para>
+    </section>        
+
+           
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter> 
