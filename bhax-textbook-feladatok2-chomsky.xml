@@ -1,0 +1,165 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Chomsky! 2. Felvonás</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+    	<title>Encoding</title>
+    	<para>
+            Fordítsuk le és futtassuk a Javat tanítok könyv MandelbrotHalmazNagyító.java forrását úgy, hogy a
+            fájl nevekben és a forrásokban is meghagyjuk az ékezetes betűket!
+            https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/adatok.html
+        </para>
+        <para> 
+    		Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/chomsky/encoding">https://github.com/Ignissen/pjt_prog2/tree/master/chomsky/encoding</link>
+        </para>
+        <para> 
+    		A feladat az volt, hogy a magyar ékezetes betűket tartalmazó forrásokat fordítsuk le és futtassuk le. A .zip letöltése után láthatjuk, hogy valahol a kódolás elrontotta a fájlneveket és a fájlokban az ékezetes betűket. Ezeket ki kellett javítani, majd ezután egyszerűen lehet fordítani a <function>javac *.java</function> paranccsal, mindenféle figyelmeztetés is hibaüzenet nélkül le is fordul.
+    	</para>
+    </section>
+    <section>
+        <title>OOCWC lexer</title>
+        <para>
+            Izzítsuk be az OOCWC-t és vázoljuk a https://github.com/nbatfai/robocaremulator/blob/master/justine/rcemu/src/carlexer.ll lexert és kapcsolását a programunk OO
+            struktúrájába!
+        </para>
+        <para>
+            
+        </para>
+    </section>
+    <section>
+        <title>l334d1c45</title>
+        <para>
+            Írj olyan OO Java vagy C++ osztályt, amely leet cipherként működik, azaz megvalósítja ezt a betű
+            helyettesítést: https://simple.wikipedia.org/wiki/Leet (Ha ez első részben nem tetted meg, akkor írasd
+            ki és magyarázd meg a használt struktúratömb memóriafoglalását!)
+        </para>
+        <para>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/chomsky/l337/l337class.cpp">https://github.com/Ignissen/pjt_prog2/blob/master/chomsky/l337/l337class.cpp</link>
+        </para>
+        <para>
+            Ez a megoldás az előző rész szintén Chomsky fejezetének l337.l feladatára épül. A legszembetűnőbb különbség, hogy ebben a megoldásban már egy osztály dolgozza fel a bemeneten kapott stringet. A cipher struct helyét átvette a dict nevű <programlisting><![CDATA[std::map<char, std::vector<std::string>>]]></programlisting> map, amely egy szótárnak megfeletethető. Ez a szótár tartalmazza, hogy melyik karakterhez melyik l337 "titkosítás" tartozik. A l337-ről már volt szó az előző rész Chomsky fejezetében, szóval itt nem írnám le újra.
+        </para>
+    </section>
+    <section>
+        <title>Full screen</title>
+        <para>
+            Készítsünk egy teljes képernyős Java programot!
+            Tipp: https://www.tankonyvtar.hu/en/tartalom/tkt/javat-tanitok-javat/ch03.html#labirintus_jatek
+        </para>
+        <para>
+            A feladat az volt, hogy készítsünk egy Java programot, amely teljes képernyős üzemmódban fut. A <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/chomsky/labirintus">Labirintus Játékot</link> sikerült életre kelteni. Hasonló problémával szenvedett, mint az Encoding feladat példája. Mivel ez a játék 1024x768-as felbontásra lett elkészítve, ezért az én 21:9-es képarányú monitoromon, 2560x1080-as felbontással, nem volt túlzottan teljes képernyős hatása, annak ellenére, hogy tényleg teljes képernyős üzemmódban indult el.
+        </para>
+        <para>
+            Ezért úgy döntöttem, hogy írok egy egyszerű <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/chomsky/fullscreen">saját programot</link> a feladatra. A program teljes képernyős üzemmódban indul, majd véletlenszerű helyre rajzol egy kitöltött ellipszist, véletlenszerű szélességgel és magassággal, véletlenszerű színnel. Ezt a rajzolást minden tizedek ezredmásodperc után végrehajtja. Ha elindítjuk a programot, egy régi képernyővédő-szerű hatást kelt.
+        </para>
+    </section>
+    <section>
+        <title>Paszigráfia Rapszódia OpenGL full screen vizualizáció</title>
+        <para>
+            Lásd vis_prel_para.pdf! Apró módosításokat eszközölj benne, pl. színvilág, textúrázás, a szintek jobb
+            elkülönítése, kézreállóbb irányítás.
+        </para>
+        <para>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/chomsky/PaRaOpenGL/para6.cpp">https://github.com/Ignissen/pjt_prog2/blob/master/chomsky/PaRaOpenGL/para6.cpp</link>
+        </para>
+        <para>
+            A feladat az volt, hogy a Paszigráfia Rapszódia OpenGL-es programon végezzünk el módosításokat.
+        </para>
+        <para>
+            Az első módodításom az volt, hogy a program háttérszínét feketére állítottam. Ezt a <function>draw</function> függvényben lehet megtenni, a <function>glClearColor ( 0.0f, 0.0f, 0.0f, 1.0f );</function> függvényhívással.
+            <programlisting>
+                <![CDATA[
+void draw ( void )
+{
+        glClearColor ( 0.0f, 0.0f, 0.0f, 1.0f );
+
+        if ( transp )
+                glDisable ( GL_DEPTH_TEST );
+        else
+                glEnable ( GL_DEPTH_TEST );
+
+        glClear ( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+
+        glMatrixMode ( GL_MODELVIEW );
+        glLoadIdentity();
+        gluLookAt ( 0.0f, 3.0f, 6.0f ,0.0f ,0.0f ,0.0f ,0.0f ,1.0f ,0.0f );
+
+        for ( int i {0}; i<cubeLetters.size(); ++i )
+                if ( i == index ) {
+                        drawPaRaCube ( i );
+                } else {
+                        drawPaRaCube ( i );
+                }
+
+        glutSwapBuffers();
+}
+                ]]>
+            </programlisting>
+        </para>
+        <para>
+            A második módosításom a programon, hogy a kirajzolt kockáknak teljesen fehér (azaz #ffffff vagy RGB(255, 255, 255)) legyen. Ezt a <function>drawPaRaCube</function> függvény 12. sorában található <function>glColor3f ( 1.0f, 1.0f, 1.0f );</function> függvényhívással tehetjük meg.
+        </para>
+        <para>
+            A harmadik módosításom az volt, hogy amikor kiválasztunk egy kockát forgatásra, akkor az átlagember (nem programozó) gondolkodását használva válasszuk ki. Tehát, amikor a bal szélen lévő (első) kockát választjuk ki, akkor ne a '0' billentyűvel válasszuk ki, hanem az '1'-es billentyűvel. Magyarán "toltam egyet jobbra" a kockák kiválasztásáért felelős billentyűkön. Ezt a következő bekezdés utáni programrészleten lehet majd megtekinteni.
+        </para>
+        <para>
+            A negyedik és utolsó módosításom az volt, hogy a kiválasztott kockánkat lehessen a "wasd" billentyűkkel is forgatni a nyilakon túl. Ezzel a módosítással azok számára lesz kézreállóbb az irányítás, akik szoktak olyan játékokkal játszani, amelyekben szintén ezeket a billentyáket használjuk karakterünk irányítására. Ezt a módosítást az előzővel együtt a <function>keyboard</function> függvényben lehet megtenni.
+            <programlisting>
+                <![CDATA[
+void keyboard ( unsigned char key, int x, int y )
+{       //"wasd"-dal történő forgatás
+        if (key == 'w') {
+                cubeLetters[index].rotx += 5.0;
+        } else if (key == 's') {
+                cubeLetters[index].rotx -= 5.0;
+        } else if (key == 'd') {
+                cubeLetters[index].roty -= 5.0;
+        } else if (key == 'a') {
+                cubeLetters[index].roty += 5.0;
+        } 
+        //átlagembernek(nem programozó) szánt kocka kiválasztás
+        if ( key == '1' ) {
+                index=0;
+        } else if ( key == '2' ) {
+                index=1;
+        } else if ( key == '3' ) {
+                index=2;
+        } else if ( key == '4' ) {
+                index=3;
+        } else if ( key == '5' ) {
+                index=4;
+        } else if ( key == '6' ) {
+                index=5;
+        } else if ( key == '7') {
+                index=6;
+        } else if ( key == 't' ) {
+                transp = !transp;
+        } else if ( key == '-' ) {
+                ++fovy;
+
+                glMatrixMode ( GL_PROJECTION );
+                glLoadIdentity();
+                gluPerspective ( fovy, ( float ) w/ ( float ) h, .1f, 1000.0f );
+                glMatrixMode ( GL_MODELVIEW );
+
+        } else if ( key == '+' ) {
+                --fovy;
+
+                glMatrixMode ( GL_PROJECTION );
+                glLoadIdentity();
+                gluPerspective ( fovy, ( float ) w/ ( float ) h, .1f, 1000.0f );
+                glMatrixMode ( GL_MODELVIEW );
+
+        }
+
+        glutPostRedisplay();
+
+}
+                ]]>
+            </programlisting>
+        </para>
+    </section>
+</chapter>
