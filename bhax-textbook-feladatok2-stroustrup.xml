@@ -15,6 +15,7 @@
     		Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/JDK-Boost">https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/JDK-Boost</link>
     	</para>
         <para>
+            A megoldásomat <link xlink:href="https://gist.github.com/vivithemage/9517678">erre a gistre</link> alapoztam. Az eredeti program "lényegi" részét a <type>void</type> <function>list</function> függvénybe tettem, mivel rekurzívan szeretném listázni a fájlokat. A for ciklusban először megnézem, hogy az éppen vizsgált fájl .java kiterjesztésű-e és, ha igen, akkor a sum változót növelem eggyel. Ezután újravizsgálom, hogy .java kiterjesztésű-e a fájl, ha igen, akkor megfelelő indentálással, a jobb elkülöníthetőség érdekében, kiíratom a fájl nevét. Ezután vizsgálom, hogy az éppen vizsgált fájl és mappa-e, mivel linuxon minden fájl, ha igen, akkor rekurzívan meghívom arra a mappára is a <function>list</function> függvényt. Ha a program eléri az argumentumként megadott mappa végét, a program kiírja, hogy mennyi publikus Java osztályt talált a mappában, majd leáll. A megoldáshoz mellékeltem egy Makefile-t, amely a make parancs kiadásával lefordítja a programot, illetve a jdkX mappába kicsomagolja a megfelelő src.zip állomány tartalmát.
         </para>
     </section>
     <section>
@@ -24,7 +25,72 @@
             szemantikáját, a mozgató konstruktort alapozd a mozgató értékadásra!
         </para>
         <para>
-            
+            Ezt a feladatot az előző rész <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/binfa_move.cpp">6.6-os feladatában</link>> lévő példával magyaráznám.
+        </para>
+        <para>
+            <programlisting>
+                <![CDATA[
+Binfa ( const Binfa & regi ) 
+{
+    std::cout << "LZWBinFa copy ctor" << std::endl;
+
+    gyoker.left =  masol ( regi.gyoker.left, regi.fa ) ;
+    gyoker.right =  masol ( regi.gyoker.right, regi.fa ) ;
+
+    if ( regi.fa == & ( regi.gyoker ) )
+        fa = &gyoker;
+
+}
+
+Binfa& operator= ( const Binfa & regi ) 
+{
+    std::cout << "LZWBinFa copy ctor" << std::endl;
+
+    gyoker.left =  masol ( regi.gyoker.left, regi.fa ) ;
+    gyoker.right =  masol ( regi.gyoker.right, regi.fa ) ;
+
+    if ( regi.fa == & ( regi.gyoker ) )
+        fa = &gyoker;
+
+}
+                ]]>
+            </programlisting>
+            Ezek a kódcsipetek az LZW Binárás Fa másoló konstruktora és értékadása. Ez arra szólgál, amikor egy bináris fát le akarunk másolni. Ez olyankor problémás lehet, amikor csak arra kell az értékadás, hogy másik objektum tárolja a bináris fát és a bináris fánk már akár több GB-os. Ilyenkor jön képbe a mozgató értékadás, amely csak a két fa gyökerét cseréli meg:
+            <programlisting>
+                <![CDATA[
+Binfa ( Binfa && regi )
+{
+    std::cout << "LZWBinFa move ctor" << std::endl;
+
+    gyoker.left = regi.gyoker.left;
+    gyoker.right = regi.gyoker.right;
+
+    regi.gyoker.left =   nullptr ;
+    regi.gyoker.right =  nullptr ;
+
+}
+
+Binfa& operator= (Binfa && regi ) 
+{
+    std::cout << "LZWBinFa move ctor" << std::endl;
+
+    gyoker.left = regi.gyoker.left;
+    gyoker.right = regi.gyoker.right;
+
+    regi.gyoker.left =   nullptr ;
+    regi.gyoker.right =  nullptr ;
+
+}
+
+                ]]>
+            </programlisting>
+            Ennek az értékadásnak az előnye, hogy mivel csak a két fa gyökerét cseréli meg, azért az akár több GB-os bináris fánk a memóriában ugyanott marad, illetve az a bináris fa, amely értékül kapta az újat, annak a tartalma törlődni fog.
+        </para>
+        <para>
+            Amikor mozgató értékadást szeretnénk alkalmazni, az <function>std::move()</function> függvényt kell meghívni a "mozgatandó" objektumra. Azért "mozgatandó" macskakörmök között, mert mint feljebb írtam is, igazából semmit nem mozgat, a memóriában minden marad a helyén.
+        </para>
+        <para>
+            Ez az értékadási módszer a C++11-es szabvány újdonsága. Azelőtt csak másoló értékadás volt.
         </para>
     </section>
     <section>
@@ -35,7 +101,52 @@
             készített titkos szövegen
         </para>
         <para>
-            
+            Megoldás1: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/rsacrack">https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/rsacrack</link>
+        </para>
+        <para>
+            Ebben a megoldásban megpróbáltam életre kelteni a feladatleírásban szereplő programot, ami nagyjából sikerült is. Az egyetlen probléma, hogy amikor a kulcspárokat generálja a program a z_i változóról nem tudtam eldönteni, hogy az milyen értéket tárol, így egy véletlenszerű BigInteger értéket választottam neki.
+        </para>
+        <para>
+            Titkosítandó és egyben törendő szövegnek Daniel Defoe: Robinson Crusoe könyvének néhány bekezdését választottam angolul írásjelek és whitespace nélkül. Csak az egyszerűség kedvéért.
+        </para>
+        <para>
+            A program bináris szemetet generál, amelyet, megvizsgálva a bin_to_dec programmal, amely a fájlban lévő összes karaktert átír a decimális megfelelőjére, nem lehet betűgyakoriság alapján törni, ugyanis ugyanannak a karakternek többféle megfelelője van a titkosított szövegben.
+        </para>
+        <para>
+            Megoldás2: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/rsacrack_sajat">https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/rsacrack_sajat</link>
+        </para>
+        <para>
+            Ebben a megoldásban kétféle titkosítást néztem, amelyet fel lehet törni betűgyakoriság elemzéssel. Az első a <link xlink:href="https://hu.wikipedia.org/wiki/Caesar-rejtjel">Ceasar-kódoló</link>, amely talán a legismertebb és legegyszerűbb titkosítási forma. Ezzel kezdeném a megoldásom részletezését.
+        </para>
+        <para>
+            Először is megírtam a Ceaser-kódolót, amelyet szerintem nem kell részleteznem, ugyanis egy faék egyszerű program. Ezt meghívva az előző megoldás titkosítandó szövegére előállítja a titkosított szöveget.
+        </para>
+        <para>
+            Ezután létrehoztam a letter_freq_analysis nevű programot, amely vizsgálja, hogy az adott fájlban melyik karakter hányszor fordul elő, illetve egy kapcsolóval ki lehet választani, hogy a statisztikáknál karakterek helyet a karakterkód decimális alakjához rendelje az előfordulások számát. A program a kódolt szövegben szereplő karakter-, vagy karakterkódokhoz rendelt előfordulások száma után írja, hogy az átlagos betűgyakoriság alapján az angol nyelvben melyik betűnek feleltethető meg legnagyobb valószínűséggel.
+        </para>
+        <para>
+            Ez alapján a javasolt betűhelyettesítésekkel meg lehet próbálni megtörni a szöveget, amely valószínűleg fog értelmes szavakat tartalmazni. mivel ebben az esetben mindegyik  "titkos" karakter ugyanolyan távolságra van az eredeti megfelelőjétől az ábécében, azért feltételezhetjük, hogy a többire is igaz. És legnagyobb valószínűséggel így is van, azaz sikeresen feltörtük a Ceasar-kódolóval titkosított szöveget.
+        </para>
+        <para>
+            A helyettesítéssel kezdve a törés menete megtekinthető a <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/stroustrup/rsacrack_sajat/cracking.txt">https://github.com/Ignissen/pjt_prog2/blob/master/stroustrup/rsacrack_sajat/cracking.txt</link> fájlban.
+        </para>
+        <para>
+            A másik titkosítás az előző rész Ceasar fejezetében megismert Exor titkosító egy butított változata, amely egyetlen karakterrel exorolja a titkosítandó szöveg karaktereit. Használata azonos a Ceasar-kódolómmal, működése azonban kicsit eltér. Míg a Ceasar-rejtjel az ábécében "eltolta" a karaktereinket, az exor titkosító a szövegünk karaktereire bitenként végrehajtja az XOR (kizáró vagy) műveletet a kulcskarakterrel. Ebben a példában az 'f' karakterrel.
+        </para>
+        <para>
+            Mivel ez a program bináris szemetet állít elő, amelyet a megfelelő kulccsal exorozva visszakapjuk az eredeti szöveget, ezért stratégiát kellett váltani, ugyanis a betűgyakoriság vizsgáló program kiírná a "titkos" karaktereket, de mivel azok nagy valószínűséggel nem nyomtatható karakterek, ezért nem megy. Ezért hoztam létre hozzá a -int kapcsolót, amely a "titkos" karaktereket a decimális megfelelőjükkel helyettesíti.
+        </para>
+        <para>
+            Mivel a titkos szövegünk még mindig bináris szemét, azért szövegszerkesztőkben nehéz dolgunk lesz a megjelenítéssel, márpedig szeretnénk megjeleníteni, mert ki kéne találni néhány "betű" jelentését. Ennek megoldásaként hoztam létre a bin_to_dec programot, amely a bináris szemét karaktereit decimálisan jeleníti meg egy generált fájlban, minden decimális megjelenítést szóközökkel elválasztva.
+        </para>
+        <para>
+            Itt a legjobb, amit tehetünk, hogy megpróbáljuk a letter_freq_analysis programunk javaslataival helyettesíteni a karaktereket, hátha találunk néhány értelmes szót, illetve néhány értelmes szót, amely még tartalmaz ismeretlen "betű(ke)t". A megtalált értelmes szavakból már meg lehet fejteni néhány másik karakter jelentését, aztán azokkal a helyettesítésekkel továbbfolytatni, amíg fel nem törjük az összes karakter jelentését. Általában az 'e', 't' és 'a' karaktereknek megfelelő javaslatot ad.
+        </para>
+        <para>
+            A feltörés menete megtekinthető a <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/stroustrup/rsacrack_sajat/cracking_exor.txt">https://github.com/Ignissen/pjt_prog2/blob/master/stroustrup/rsacrack_sajat/cracking_exor.txt</link> fájlban. Itt az előző bekezdés menete tekinthető meg teljes egészében.
+        </para>
+        <para>
+            A mappában létrehoztam egy Makefile-t, amely arra szolgál, hogy egy <function>make</function> parancsot kiadva leforduljanak a szükséges programok a feladat teljeítéséhez.
         </para>
     </section>
     <section>
@@ -46,7 +157,13 @@
             hét/Perceptron osztály feladatot is.)
         </para>
         <para>
-            
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/perceptron2">https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/perceptron2</link>
+        </para>
+        <para>
+            Ez a megoldás az első rész 4.6-os feladatára épül, illetve annak egy továbbfejlesztése. Annyi változtatás történt, hogy létrehoztam a perceptron osztályon belül egy új metódust <function>gen_img</function> névvel, amely a paraméterként megadott képadatok alapján generál új képadatokat, amelyet a függvény végén visszaad a hívónak. Az új képadatokat megfelelő módon értékül adom az elkészítendő png fájlnak, majd a png++ könyvtár segítségével kiíratom a png fájlt.
+        </para>
+        <para>
+            A megoldás jelenleg véletlenszerű hangyaháborút generál. Ezen valószínűleg lehetne segíteni tanítással, de a tanítási próbálkozások után a képadatok minden esetben NaN értékkel rendelkeznek, amelyből a png++ egy teljesen fekete képet generál.
         </para>
     </section>
     <section>
