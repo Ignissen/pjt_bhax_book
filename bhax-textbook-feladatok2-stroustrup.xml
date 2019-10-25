@@ -101,6 +101,10 @@ Binfa& operator= (Binfa && regi )
             készített titkos szövegen
         </para>
         <para>
+            Készítettem egy olyan RSA titkosítót, amelyet nem lehet betűgyakoriság alapon törni, Pythonban.
+            Ez megtalálható <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/WorkingRSA">itt.</link>
+        </para>
+        <para>
             Megoldás1: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/rsacrack">https://github.com/Ignissen/pjt_prog2/tree/master/stroustrup/rsacrack</link>
         </para>
         <para>
