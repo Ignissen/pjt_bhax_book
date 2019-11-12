@@ -1,0 +1,83 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Schwarzenegger</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+    	<title>FUTURE tevékenység editor</title>
+    	<para>
+            Javítsunk valamit a ActivityEditor.java JavaFX programon!
+            <link xlink:href="https://github.com/nbatfai/future/tree/master/cs/F6">https://github.com/nbatfai/future/tree/master/cs/F6</link>
+            Itt láthatjuk működésben az alapot: <link xlink:href="https://www.twitch.tv/videos/222879467">https://www.twitch.tv/videos/222879467</link>
+        </para>
+        <para>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/schwarzenegger/future/ActivityEditor.java">https://github.com/Ignissen/pjt_prog2/blob/master/schwarzenegger/future/ActivityEditor.java</link>
+        </para>
+        <para> 
+    		Ez a program egy JavaFX-et használó program, amely a nevéből kikövetkeztethetően egy tevékenység-kezelő program. A program fordításával különösebb probléma nincs, csak annyi, hogy openJDK8-at kell hozzá használni. OpenJDK11-gyel már nem jelenik meg rendesen a program.
+    	</para>
+        <para>
+            A feladat leírása alapján a program tartalmaz hibákat. Az egyik hiba, amely feltűnt, hogy a tevékenység átnevezésekor az altevékenységek nem jönnek létre az új tevékenységnév alatt újratöltés alatt, azaz a fájlrendszerben nincs letárolva rendesen. Ezt az <function>editCell</function> függvényben lehet orvosolni a <type>TextFieldTreeCell</type> osztályban.
+        </para>
+        <para>
+            <programlisting language="java">
+                <![CDATA[
+private void editCell() {
+    if (getItem() == null) {
+        return;
+    }
+    String oldText = getItem().toString();
+    textField.setText(oldText);
+    textField.setOnKeyReleased((javafx.scene.input.KeyEvent t) -> {
+        if (t.getCode() == javafx.scene.input.KeyCode.ENTER) {
+            String newText = textField.getText();
+            java.io.File newf = new java.io.File(newText);
+            java.io.File oldf = new java.io.File(oldText);
+            try {
+                oldf.renameTo(newf);
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+            commitEdit(newf);
+        }
+    });
+}                
+                ]]>
+            </programlisting>
+            Ez a javított forrás. A forráson kicsit tömörítettem, hogy kevesebb helyet foglaljon. Az eredeti forrásban szebben tagolt.
+        </para>
+        <para>
+            A hibát az okozta, hogy átnevezésnél, csak létrehoztunk egy új fájlt, viszont az eredeti tartalmat nem mozgattuk. A tartalmat ennél a megoldásnál sem mozgatjuk, hanem a fájlt átnevezzük a fájlrendszerben, illetve a <function>commitEdit</function> függvényt az új fájl nevével hívjuk meg, ezzel biztosítva, hogy a programon belül is nyoma legyen az átnevezésnek.
+        </para>
+    </section>
+    <section>
+        <title>OOCWC Boost ASIO hálózatkezelése</title>
+        <para>
+            Mutassunk rá a scanf szerepére és használatára! https://github.com/nbatfai/robocaremulator/blob/master/justine/rcemu/src/carlexer.ll
+        </para>
+        <para>
+            
+        </para>
+    </section>
+    <section>
+        <title>SamuCam</title>
+        <para>
+            Mutassunk rá a webcam (pl. Androidos mobilod) kezelésére ebben a projektben:
+            https://github.com/nbatfai/SamuCam
+        </para>
+        <para>
+            
+        </para>
+    </section>
+    <section>
+        <title>BrainB</title>
+        <para>
+            Mutassuk be a Qt slot-signal mechanizmust ebben a projektben: https://github.com/nbatfai/esporttalent-search
+        </para>
+        <para>
+            
+        </para>
+    </section>
+</chapter>
