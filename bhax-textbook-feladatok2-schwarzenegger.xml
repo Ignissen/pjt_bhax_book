@@ -49,7 +49,7 @@ private void editCell() {
             Ez a javított forrás. A forráson kicsit tömörítettem, hogy kevesebb helyet foglaljon. Az eredeti forrásban szebben tagolt.
         </para>
         <para>
-            A hibát az okozta, hogy átnevezésnél, csak létrehoztunk egy új fájlt, viszont az eredeti tartalmat nem mozgattuk. A tartalmat ennél a megoldásnál sem mozgatjuk, hanem a fájlt átnevezzük a fájlrendszerben, illetve a <function>commitEdit</function> függvényt az új fájl nevével hívjuk meg, ezzel biztosítva, hogy a programon belül is nyoma legyen az átnevezésnek.
+            A hibát az okozta, hogy átnevezésnél, csak létrehoztunk egy új fájlt, viszont az eredeti tartalmat nem mozgattuk. A tartalmat ennél a megoldásnál sem mozgatjuk, hanem a fájlt átnevezzük a <function>renameTo</function> függvény segítségével a fájlrendszerben, illetve a <function>commitEdit</function> függvényt az új fájl nevével hívjuk meg, ezzel biztosítva, hogy a programon belül is nyoma legyen az átnevezésnek.
         </para>
     </section>
     <section>
@@ -58,7 +58,26 @@ private void editCell() {
             Mutassunk rá a scanf szerepére és használatára! https://github.com/nbatfai/robocaremulator/blob/master/justine/rcemu/src/carlexer.ll
         </para>
         <para>
-            
+            A <function>scanf</function> függvény C nyelvben a standard inputról való olvasásra használatos. Ebben a programban viszont az <function>sscanf</function> függvényt használjuk, amely egy megadott stringből olvas be. Itt a yytext változó tárolja a standard inputról olvasott adatot. Ezután a carlexer.ll fájlban megadott reguláris kifejezésekre próbálja illeszteni a yytextben található adatot. Ha talál egy mintát, maelyre illeszkedik, meghívja a megfelelő lexer által generált függvényt, amelyben az olvasott adatoknak megfelelően eltároljuk az olvasott adatokat.
+        </para>
+        <para>
+            Egy példa:
+            <programlisting language="C++" ><![CDATA[
+INIT	"<init"
+...
+{INIT}{WS}{WORD}{WS}{INT}{WS}("c"|"g")	{
+    std::sscanf(yytext, "<init %s %d %c>", name, &num, &role);
+    if(num >200)
+    {
+        m_errnumber = 1;
+        num = 200;
+    }
+    m_cmd = 1;
+    }				
+
+]]>
+            </programlisting>
+            Itt a reguláris kifejezés {INIT}{WS}{WORD}{WS}{INT}{WS}("c"|"g"), amely annyit jelent, hogy az adat úgy kezdődik, hogy "&lt;init", ezután whitespace, azaz space, tab, stb...; ezt követi egy string, amelyet követ egy egész szám, megint whitespace, majd "c" vagy "g" karakter. Ha talál a program egy erre a mintára illeszkedő stringet, akkor a <function>std::sscanf</function> függvény segítségével a megfelelő értékeket eltárolja a megfelelő változókban.
         </para>
     </section>
     <section>
@@ -68,7 +87,23 @@ private void editCell() {
             https://github.com/nbatfai/SamuCam
         </para>
         <para>
-            
+            A main.cpp-ből kiindulva végig lehet követni a videoStream <type>std::string</type> típusú változó "útját", amelynek utolsó "állomása" a SamuCam osztály konstruktorában van.  
+            <programlisting>
+                <![CDATA[ 
+void SamuCam::openVideoStream()
+{
+  videoCapture.open ( videoStream );
+
+  videoCapture.set ( CV_CAP_PROP_FRAME_WIDTH, width );
+  videoCapture.set ( CV_CAP_PROP_FRAME_HEIGHT, height );
+  videoCapture.set ( CV_CAP_PROP_FPS, 10 );
+}
+                ]]>
+            </programlisting>
+            A <function>SamuCam::openVideoStream()</function> függvényben hozzuk létre a kapcsolatot a videóforrással, amely a program esetében egy IP Kamera. Beállítjuk a felvétel szélességét, magasságát, illetve másodpercenkénti képkockaszámát.
+        </para>
+        <para>
+            A képek "beszerzéséért" és feldolgozásáért a <function>SamuCam::run()</function> függvény felelős. A frame <type>cv::Mat</type> típusú változóban lesz tárolva a kameráról "beszerzett" kép. A <function>videoCapture.read ( frame )</function> függvényhívással "szerezhetjük be" a kamera által készített képet, amellyel utána, szabadon fogalmazva, azt csinálhatunk, amit akarunk. Ebben a programban éppen arcfelismerést hajtunk végre a képen.
         </para>
     </section>
     <section>
@@ -77,7 +112,15 @@ private void editCell() {
             Mutassuk be a Qt slot-signal mechanizmust ebben a projektben: https://github.com/nbatfai/esporttalent-search
         </para>
         <para>
-            
+            A slot-signal mechanizmust a Qt-n belül arra használjuk, hogy a különböző objektumaink (widgetek, threadek, stb...) tudjanak egymással kommunikálni. Amikor grafikus felhasználói felületű programokat készítünk, általában jó, ha különböző objektumok tudnak egymás között kommunikálni, ha az egyikben valami változás (akár egy billentyű lenyomása) történt. A signalokat olyankor bocsátjuk ki (az <function>emit</function> függvény segítségével), amikor olyan változás történt, amelyet szeretnénk megosztani az összekapcsolt osztállyal, osztályokkal. A slotok egyszerűen C++ függvények, amelyek akkor hívódnak meg, amikor egy signalt kibacsájtunk. A signalokat és slotokat a <function>connect</function> függvénnyel kapcsolhatjuk össze.
+        </para>
+        <para>
+            Erre van egy remek szemléltetés a Qt dokumentációjában:
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/abstract-connections.png" scale="35" />
+                </imageobject>
+            </mediaobject>
         </para>
     </section>
 </chapter>
