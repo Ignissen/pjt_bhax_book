@@ -88,7 +88,7 @@ INIT	"<init"
         </para>
         <para>
             A main.cpp-ből kiindulva végig lehet követni a videoStream <type>std::string</type> típusú változó "útját", amelynek utolsó "állomása" a SamuCam osztály konstruktorában van.  
-            <programlisting>
+            <programlisting language="c++">
                 <![CDATA[ 
 void SamuCam::openVideoStream()
 {

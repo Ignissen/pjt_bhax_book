@@ -13,28 +13,76 @@
             <link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#id527287">https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#id527287</link>
         </para>
         <para> 
-    		
+    		<programlisting language="java">
+                <![CDATA[ 
+public class KapuSzkenner {
+
+    public static void main(String[] args) {
+        
+        for(int i=0; i<1024; ++i)
+            
+            try {
+                
+                java.net.Socket socket = new java.net.Socket(args[0], i);
+                
+                System.out.println(i + " figyeli");
+                
+                socket.close();
+                
+            } catch (Exception e) {
+                
+                System.out.println(i + " nem figyeli");
+                
+            }
+    }
+    
+}
+                ]]>
+            </programlisting>
+            Ez a program lényegében annyit csinál, hogy a célszámítógép portjaival próbál kapcsolatot létrehozni és, ha sikerül, akkor a célszámítógép adott portján egy szerver figyel. Ekkor a program kiírja, hogy "&lt;portszám&gt; figyeli"  Viszont, ha nem figyel szerver, akkor ez egy kivételt okoz, mivel nem tud a kliens programunk kapcsolatot létrehozni. Ekkor tudjuk megállapítani, hogy az adott portot nem figyeli a célszámítógép. Viszont ahogyan a weboldal/könyv is írta, ezt csak otthoni eszközökön, vagy pedig engedéllyel szabad használni, mivel ezzel érzékeny információk is szerezhetők, még akkor is, ha csak az 1024 alatti számú portokat vizsgáljuk.
     	</para>
     </section>
     <section>
         <title>AOP</title>
         <para>
-            Szőj bele egy átszövő vonatkozást az első védési programod Java átiratába! (Sztenderd védési
-            feladat volt korábban.)
+            Szőj bele egy átszövő vonatkozást az első védési programod Java átiratába! (Sztenderd védési feladat volt korábban.)
         </para>
         <para>
-            
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/lauda/AspectJ/com/ignissen/binfa/aspect">https://github.com/Ignissen/pjt_prog2/tree/master/lauda/AspectJ/com/ignissen/binfa/aspect</link>
+        </para>
+        <para>
+            A megoldás alalpjául az LZWBinFa osztály szolgál, amelyhez kell átszövő hivatkozásokat írni. Az LZWBinFa már a korábbi csokrokból adott. A megoldásomban a bejárásokat "bővítettem" ki.
+        </para>
+        <para>
+            A pointcut jelzi, hogy egy join pointot szeretnénk létrehozni, amely "csatlakozik" a már meglévő függvényünkhöz, ebben az esetben a <type>void</type> típusú <function>preorder</function> függvényhez, illetve a többi bejáráshoz megfelelő módon.
+        </para>
+        <para>
+            A before és after kulcsszavak az ún. advice-ok létrehozására szolgál, amelyek a kettőspont után megadott join point lefutása előtt, ill. után kerüljenek meghívásra.
+        </para>
+        <para>
+            Ebben a példában a bejárásokat vettem join pointnak, illetve ezek előtt, majd után futnak le az advice-ok. Ebben a példában csak egy nagyon egyszerű módosítást végeztem velük, ami abban merül ki, hogy a megadott bejárás előtt és után kiírja, hogy az adott bejárás következik, illetve véget ért. De ettől természetesen sokkal összetettebb és hasznosabb dolgokra is lehet használni.
+        </para>
+        <para>
+            Legtöbb esetben, amivel találkoztam az interneten, arra használják, hogy akár több osztályhoz tartozó több objektumhoz készítsenek olyan függvényeket, amelyek megfelelő módon tudnak logot írni.
         </para>
     </section>
     <section>
-        <title>Junit teszt</title>
+        <title>JUnit teszt</title>
         <para>
             A <link xlink:href="https://progpater.blog.hu/2011/03/05/labormeres_otthon_avagy_hogyan_dolgozok_fel_egy_pedat">https://progpater.blog.hu/2011/03/05/labormeres_otthon_avagy_hogyan_dolgozok_fel_egy_pedat</link>
-            poszt kézzel számított mélységét és szórását dolgozd be egy Junit tesztbe (sztenderd védési feladat
-            volt korábban).
+            poszt kézzel számított mélységét és szórását dolgozd be egy Junit tesztbe (sztenderd védési feladat volt korábban).
         </para>
         <para>
-            
+            <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/lauda/JUnit">https://github.com/Ignissen/pjt_prog2/tree/master/lauda/JUnit</link>
+        </para>
+        <para>
+            A megoldás alapjául az LZWBinFa osztály szolgál, amelyre kell test-case-eket írni. Az LZWBinFa már a korábbi csokrokból adott. Ezt kellett tesztelni, hogy egy előre kézzel kiszámított bináris fát kell felépítenie és az alapján mélységet és szórást kellett kiszámolnia.
+        </para>
+        <para>
+            A TesztJUnit osztályban létrehoztam egy <function>init</function> függvényt, amely célja, hogy felépítse a bináris fát a tesztek előtt. Azt, hogy "minden előtt" fusson le, a "@BeforeAll" annotációval lehet jelezni. A "@Test" annotációval lehet megadni megadni, hogy az adott függvény egy vagy több tesztet tartalmaz. 
+        </para>
+        <para>
+            A teszteken belül az <function>assertEquals</function> függvény "erősíti" meg, hogy az első paraméterként megadott értéket adja eredményül a második paraméterként meghívott függvény visszatérési értéke. A round függvényre azért volt szükség, mert a LZWBinFa beépített szórásszámító függvénye túl pontos értéket adott vissza, viszont az első hat tizedes jegyig megegyezett az általam megadottal.
         </para>
     </section>
     <section>
@@ -43,7 +91,7 @@
             Készíts egyszerű C++/OpenGL-es megjelenítőt, amiben egy kocsit irányítasz az úton. 
         </para>
         <para>
-            Erre a feladatra használnám fel a második kihagyási lehetőségemet
+            Erre a feladatra használnám fel a második kihagyási lehetőségemet a Gödel csokorban bemutatott Hackerek rendezése feladattal.
         </para>
     </section>
 </chapter>
