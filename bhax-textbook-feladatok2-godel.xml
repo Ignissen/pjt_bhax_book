@@ -56,7 +56,35 @@
             Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/godel/bonus_skip2_udprog">https://github.com/Ignissen/pjt_prog2/tree/master/godel/bonus_skip2_udprog</link>
         </para>
         <para>
+            Megoldásomhoz az alapötletet Molnár Antal Albert megoldása adta, viszont a két megoldás jelentősen eltér egymástól. Már az is jelentős eltérés, hogy ő kliensoldalon rendezte a tömböt, JavaScriptben, míg én szerveroldalon php-ban.
+        </para>
+        <para>
             A megoldásomban először is létrehoztam a login.php nevű fájlt, ami nevéből adódóan a hackerek bejelentkeztetéséért felelős. Maga a weboldal egy kis egyszerű HTML+CSS kombó, amin minden vízszintesen középre van igazítva, a DEAC logó alatt pedig ott van a felhasználónév/jelszó bevitelére szánt input mezők. Egyszerűség kedvéért ebben a feladatban mindegyik hackernek a jelszava az, hogy teszt. Ezután jött a php kód írása, amely arra szolgált, hogy ellenőrizze a megadott adatokat, azaz bejelentkezett-e a hacker vagy pedig elírta a felhasználónevet vagy jelszót. Ha sikeresen bejelentkezett, akkor a sessionön belül létrehozza a megfelelő értékpárokat, amelyet az adott munkamenetben a weboldal minden lapja látja. Majd, ha ezek is megvannak, átirányítja a hackert a 100.php oldalra.
+        </para>
+        <para>
+            A 100.php oldalon jelenik meg, hogy az egyes hackerek mennyit streameltek eddig, illetve legfelül jelenik meg a közösen streamelt idő. Ebben a fájlban kicsit hozzányúltam a php kódhoz, hogy az úgy működjön, ahogy szerintem kellene neki. Amikor ez megvolt, létrehoztam az index.php nevű fájlt, ami csak azért kell, hogyha valaki használni akarná az oldalt, akkor általában a webszerverek az index.html-t vagy az index.php-t küldik vissza a kliensnek. Az index.php igazából annyiból áll, hogy egyből átirányítja a böngészőt a login.php-ra. 
+        </para>
+        <para>
+            Még létrehoztam egy stop.php nevű fájlt, amely arra szolgál, hogy a szerveren is lezárja a streamelést és elmentse a változásokat szerveroldalon. Majd, ha ez megtörtént, átirányítja a klienst a login.php-ra.
+        </para>
+        <para>
+            Miután ezek megvoltak, jöhetett az asszociatív tömb rendezése. Én ezt szerveroldalon oldottam meg, egy buborékrendezés segítségével. Ez az egyik leglassab rendezési algoritmus, viszont ilyen kis mennyiségű adatnál nem igazán számít. Az asszociatív tömböt rendezésre úgy készítettem fel, hogy külön tömbökbe szedtem a kulcsokat és az értékeket, majd a rendezés után külön tömbként írattam is ki a php-val.
+        </para>
+        <para>
+            Következzen néhány kép: 
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/weboldal_bejelentkezes.png" scale="15"/>
+                </imageobject>
+            </mediaobject>
+            
+        </para>
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/weboldal_bejelentkezve.png" scale="15"/>
+                </imageobject>
+            </mediaobject>
         </para>
     </section>
 
