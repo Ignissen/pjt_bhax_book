@@ -1,0 +1,73 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Gödel!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+    	<title>C++11 Custom Allocator</title>
+    	<para>
+            <link xlink:href="https://prezi.com/jvvbytkwgsxj/high-level-programming-languages-2-c11-allocators/">https://prezi.com/jvvbytkwgsxj/high-level-programming-languages-2-c11-allocators/</link> a CustomAlloc-os példa, lásd C forrást az UDPROG repóban!
+        </para>
+        <para> 
+    		Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/godel/custom_alloc/custom_alloc.hpp">https://github.com/Ignissen/pjt_prog2/blob/master/godel/custom_alloc/custom_alloc.hpp</link>
+        </para>
+        <para>
+            A megoldásomat az <link xlink:href="https://howardhinnant.github.io/allocator_boilerplate.html">ezen a linken</link> található Allocator Biolerplate-re alapoztam. Amiben lényegesen eltér az én megoldásom, hogy próbáltam fájlokra szedni, mint a legtöbb C++ programomat, hogy a deklaráció és az implementáció külön fájlokban legyenek. A megszokott módon ez nem megoldható, ugyanis a template-ek fordításánál a fordítónak "látnia" kell egyszerre a deklarációkat és az implementációkat is, hogy olyan binárist tudjon előállítani, hogy a linkelés sikeres legyen. Ha ez nem így történik, akkor a fordító úgy nevezi el a template függvényeket, "ahogy jól esik neki", így a linker nem tudja helyesen, vagy egyáltalán, linkelni. Erre a problémára kerestem megoldást StackOVerflow-on és találtam is egyet, amely azt írja, hogy az implementációkat egy .tcc kiterjesztésű fájlba tegyem, majd az allokátor osztály definíciója után include-oljam. Ez megoldotta a problémát, szóval alkalmaztam és a megoldásomat is ilyen formában töltöttem fel githubra.
+        </para>
+    </section>
+    <section>
+        <title>STL map érték szerinti rendezése</title>
+        <para>
+            Például: <link xlink:href="https://github.com/nbatfai/future/blob/master/cs/F9F2/fenykard.cpp#L180">https://github.com/nbatfai/future/blob/master/cs/F9F2/fenykard.cpp#L180</link>
+        </para>
+        <para>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/godel/STL_sort/stl_sort.cpp">https://github.com/Ignissen/pjt_prog2/blob/master/godel/STL_sort/stl_sort.cpp</link>
+        </para>
+        <para>
+            Megoldásomban a fénykard <function>sort_map</function> függvényét alkalmaztam, amellyel a <function>main</function> függvényben létrehozott <type>std::map</type> típusú my_map nevű asszociatív tömböt rendeztem. A rendezés úgy működik, hogy az asszociatív tömb értékpárjait <type>std::pair</type> típusú <type>std::vector</type>-okba szedjük, majd az <function>std::sort</function> függvénnyel rendezzük ezeket, viszont mivel nem egyszerű adattípusról van szó, ezért a rendezőfüggvényben meg kell adni paraméterül, hogy mi alapján hasonlítsa össze a rendezendő elemeket. Ebben az esetben ez egy lambda függvény, amelynek olyan tulajdonsága van, hogy nem kell létrehozni érte magát a függvényt, hogy használhassuk, illetve ebben a példában is jól látható, hogy így egyszerűen a paraméter helyén megírjuk a függvényünket, amelyet átadunk a függvénynek és kész. Ezután a függvény visszaadja a már rendezett <type>std::vector</type>t. Amivel kiegészítettem az alap programot, hogy a <function>main</function> függvényben létrehoztam a rendezni kívánt mapot és inicializáltam, majd kiírattam az értékpárjait, ezután meghívtam rá a <function>sort_map</function> függvényt, majd kiírattam rendezve is.
+        </para>
+    </section>
+    <section>
+        <title>Alternatív Tabella rendezése</title>
+        <para>
+            Mutassuk be a https://progpater.blog.hu/2011/03/11/alternativ_tabella a programban a java.lang
+            Interface Comparable&lt;T&gt; szerepét!
+        </para>
+        <para>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/godel/alt_tab">https://github.com/Ignissen/pjt_prog2/tree/master/godel/alt_tab</link>
+        </para>
+        <para>
+            Ebben a feladatban az a cél, hogy bemutassuk a Java nyelv Comparable&lt;T&gt; interfészét. Ennek az interfésznek az implementálása ugyanazon eredménnyel jár, mint egy C++ osztályban az operator&lt;, operator= és operator&gt; függvények túlterhelése. Java nyelvben ezt az implements kulcsszóval lehet jelezni, majd a <function>compareTo</function>  függvény implementálásával lehet "megmondani", mi alapján és hogyan is történjen az összehasonlítás.
+        </para>
+    </section>
+
+    <section>
+        <title>UDPROG-ba posztolt bónusz feladat(Hackerek rendezése)</title>
+        <para>
+            Van egy kezdeményezés a DEAC-Hackersben: <link xlink:href="https://youtu.be/HqeLaKJXC9c">https://youtu.be/HqeLaKJXC9c</link> 
+
+            Az UDPROG-ban azzal promótálnám, hogy bevenném egy olyan feladatnak (szimpla PHP+JavaScript), amivel ki lehet váltani kettőt, ha kap ez a poszt 20 lájkot. Maga a feladat: ami megvolt C++-ban és Java-ban: asszociatív tömb rendezése, hogy a képen láthatóan sorba legyenek a hackerek.
+            
+            DEAC 100 hours challenger B
+        </para>
+        <para>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/godel/bonus_skip2_udprog">https://github.com/Ignissen/pjt_prog2/tree/master/godel/bonus_skip2_udprog</link>
+        </para>
+        <para>
+            A megoldásomban először is létrehoztam a login.php nevű fájlt, ami nevéből adódóan a hackerek bejelentkeztetéséért felelős. Maga a weboldal egy kis egyszerű HTML+CSS kombó, amin minden vízszintesen középre van igazítva, a DEAC logó alatt pedig ott van a felhasználónév/jelszó bevitelére szánt input mezők. Egyszerűség kedvéért ebben a feladatban mindegyik hackernek a jelszava az, hogy teszt. Ezután jött a php kód írása, amely arra szolgált, hogy ellenőrizze a megadott adatokat, azaz bejelentkezett-e a hacker vagy pedig elírta a felhasználónevet vagy jelszót. Ha sikeresen bejelentkezett, akkor a sessionön belül létrehozza a megfelelő értékpárokat, amelyet az adott munkamenetben a weboldal minden lapja látja. Majd, ha ezek is megvannak, átirányítja a hackert a 100.php oldalra.
+        </para>
+    </section>
+
+    <section>
+        <title>GIMP Scheme hack</title>
+        <para>
+            Ha az előző félévben nem dolgoztad fel a témát (például a mandalás vagy a króm szöveges
+            dobozosat) akkor itt az alkalom!
+        </para>
+        <para>
+            Ezt a feladatot hagynám ki elsőként a Hackerek rendezése feladattal.
+        </para>
+    </section>
+</chapter>
