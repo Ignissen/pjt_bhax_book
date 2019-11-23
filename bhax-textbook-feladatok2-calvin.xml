@@ -1,0 +1,107 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Calvin!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+    	<title>MNIST</title>
+    	<para>
+            Az alap feladat megoldása, +saját kézzel rajzolt képet is ismerjen fel,
+            https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol Háttérként ezt vetítsük le:
+            https://prezi.com/0u8ncvvoabcr/no-programming-programming/
+        </para>
+        <para> 
+    		Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/calvin/mnist/mnist.py">https://github.com/Ignissen/pjt_prog2/blob/master/calvin/mnist/mnist.py</link>
+        </para>
+        <para> 
+    		Ez a feladat a nyolcadik fejezet első feladatának kiegészítése, így csak a kiegészítést magyaráznám.
+        </para>
+        <para>
+            Ez a megoldás tartalmaz néhány új importot, névszerint a matplotlib.pyplot modult(az image modult végül nem használtam), a PIL modulból az Image osztály, az os és sys modulok.
+        </para>
+        <para>
+            Az első kiegészítés az volt, hogy tanítás után mentse el a modellt, illetve a következő argumentumok nélküli indításkor csak töltse be a már feltanított modellt. Argumentumként a program vagy nem vár semmit, vagy pedig egy egész számot, hogy az MNIST tanító adatbázison hány epoch-on keresztül tanítsa a modellt.
+        </para>
+        <para>
+            A következő módosítás pedig, hogy a tanítás után töltse be az általunk megadott fájlból a képet, amely egy kézzel rajzolt számjegy és próbálja "kitalálni", hogy melyik szám lehet. Miután a standard outputra kiírja, hogy a modell szerint a képen lévő szám, a program kiírja a helyes választ, majd a matplotlib segítségével megjelenítem a megadott képet.
+        </para>
+    </section>
+    <section>
+        <title>Deep MNIST</title>
+        <para>
+            Mint az előző, de a mély változattal. Segítő ábra, vesd össze a forráskóddal a
+            https://arato.inf.unideb.hu/batfai.norbert/NEMESPOR/DE/denbatfai2.pdf 8. fóliáját!
+        </para>
+        <para>
+            Megoldás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/blob/master/calvin/deep_mnist/deep_mnist.py">https://github.com/Ignissen/pjt_prog2/blob/master/calvin/deep_mnist/deep_mnist.py</link>
+        </para>
+        <para> 
+    		Ez a feladat a nyolcadik fejezet második feladatának kiegészítése, így csak a kiegészítést magyaráznám.
+        </para>
+        <para> 
+    		A módosítás lényegében ugyanaz, mint az előző feladatban, azzal a különbséggel, hogy itt nem mentem el a modellt tanítás után, azaz minden futtatásnál újra fogja tanítani a modellt. A tanítás után betölti a megadott képet, a modell megmondja, hogy szerinte melyik számjegy van a képen, majd a standard outputra kiíratom a modell válaszát. Ezután megjelenítem a matplotlib segítségével a megadott képet.
+    	</para>
+    </section>
+    <section>
+        <title>Android telefonra a TF objektum detektálója</title>
+        <para>
+            Telepítsük fel, próbáljuk ki!
+        </para>
+        <para>
+            Forrás: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/calvin/android">https://github.com/Ignissen/pjt_prog2/tree/master/calvin/android</link>
+        </para>
+        <para> 
+    		Ez a program a Tensorflow Lite egyik példaprogramja androidra. Image classifationt használ valós időben, hogy az eszközünk hátlapi kameráján megjelenő tárgyakat felismerje és bekeretezze. A keret tetejére kiírja, hogy a modell szerint mit lát a képen, illetve azt, hogy mekkora biztossággal mondja ezt a modell. 
+        </para>
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/bed1.jpg" scale="50"/>
+                </imageobject>
+            </mediaobject>
+            Mint a képen látható, a modell nem tökéletes, mivel az ágyamat tortának jelölte meg.
+        </para>
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/bed2.jpg" scale="50"/>
+                </imageobject>
+            </mediaobject>
+            A modell úgy tűnik, működőképes, mivel az ágyamat ágyként jelöli meg. Valószínűleg a plédem zavart be a modellnek, mert anélkül felismeri.
+        </para>
+        <para>
+            Következzen még néhány extra kép: 
+        </para>
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/mouse_keyboard.jpg" scale="50"/>
+                </imageobject>
+            </mediaobject>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/bag.jpg" scale="50"/>
+                </imageobject>
+            </mediaobject>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/monitor.jpg" scale="50"/>
+                </imageobject>
+            </mediaobject>
+            Amiatt nem lehet hibáztatni a modellt, hogy a monitoromat TV-nek jelölte meg, mivel ránézésre nem sok különbség van egy TV és egy monitor között, illetve a monitorom van akkora, mint egy kisebb TV.
+        </para>
+    </section>
+    <section>
+        <title>Minecraft MALMO-s példa</title>
+        <para>
+            A https://github.com/Microsoft/malmo felhasználásával egy ágens példa, lásd pl.:
+            https://youtu.be/bAPSu3Rndi8, https://bhaxor.blog.hu/2018/11/29/eddig_csaltunk_de_innentol_mi,
+            https://bhaxor.blog.hu/2018/10/28/minecraft_steve_szemuvege
+        </para>
+        <para>
+            Ezt a feladatot a 8. fejezetben már megoldottam.
+        </para>
+    </section>
+</chapter>
