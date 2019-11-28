@@ -83,4 +83,108 @@
             Gutenberg frissítve, illetve könyv leadás előtti végleges formája feltöltésre kerül.
         </revremark>
     </revision>
+    <revision>
+        <revnumber>0.0.10</revnumber>
+        <date>2019-09-25</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Arroway fejezet feltöltve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.11</revnumber>
+        <date>2019-09-25</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Liskov fejezet feltöltve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.12</revnumber>
+        <date>2019-10-10</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Mandelbrot fejezet feltöltve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.13</revnumber>
+        <date>2019-10-11</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Arroway fejezet frissítve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.14</revnumber>
+        <date>2019-10-17</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Chomsky, Második Felvonás fejezet feltöltve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.15</revnumber>
+        <date>2019-10-18</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Stroustrup fejezet létrehozva.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.16</revnumber>
+        <date>2019-10-20</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Stroustrup fejezet frissítve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.17</revnumber>
+        <date>2019-10-20</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Gödel fejezet feltöltve, majd frissítve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.18</revnumber>
+        <date>2019-11-12</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Schwarzenegger fejezet feltöltve, majd frissítve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.19</revnumber>
+        <date>2019-11-18</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Gödel fejezet frissítve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.20</revnumber>
+        <date>2019-11-18</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Lauda fejezet feltöltve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.21</revnumber>
+        <date>2019-11-23</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Calvin fejezet feltöltve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.22</revnumber>
+        <date>2019-11-28</date>
+        <authorinitials>Petrus József Tamás</authorinitials>
+        <revremark>
+            Fejezetek elején olvasónaplók frissítve.
+        </revremark>
+    </revision>
 </revhistory>
