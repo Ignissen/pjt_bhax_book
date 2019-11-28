@@ -6,6 +6,12 @@
         </keywordset>
     </info>
     <section>
+        <title>Olvasónapló - Chomsky</title>
+        <para>
+            Minden program forrásszövegének a legkisebb alkotórészei a karakterek.A karakterkészlet a legfontosabb a forrás összeállításánál. Ennek elemei például a lexikális, szintaktikai, program és fordítási egységek. A programnyelvek háromféle karaktert ismernek: betűk, számjegyek és egyéb karakterek. A lexikális egységek azok az elemek, amelyet a fordító lexikai elemzés során felismer. Lehetnek a programkódban szimbolikus nevek, címkék, megjegyzések (a megjegyzéseket a fordító figyelmen kívül hagyja), illetve literálok. Az osztályváltozók olyan kifejezések(metódusok, mezők), amelyek az osztályon keresztül és a pédányokon keresztül is elérhetőek. A példányváltozók olyan tagok, amelyek az objektumokhoz tartozó értékeket tárolnak és csak az adott példányon keresztül érhető el, akár közvetlenül, akár az osztály által biztosított interface-en keresztül. A tagváltozók az osztály-, és példányváltozók együttesét jelentik, míg a tegmetódusok az osztály-, és példánymetódusok együttesét jelenti. Ezeknek ugyanazon osztályban kell, hogy definiálva legyenek. Az osztálymetódusok és osztályváltozók olyan tagok, amelyek eléréséhez nem kell példányosítani az adott osztályt. Az objektum orientált nyelv ugyanazokat az utasításokat használja, mint a nyelv az objektum orientáltság nélkül.
+        </para>
+    </section>
+    <section>
     	<title>Encoding</title>
     	<para>
             Fordítsuk le és futtassuk a Javat tanítok könyv MandelbrotHalmazNagyító.java forrását úgy, hogy a

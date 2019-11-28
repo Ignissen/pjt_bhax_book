@@ -5,7 +5,12 @@
             <keyword/>
         </keywordset>
     </info>
-
+    <section>
+        <title>Olvasónapló - Mandelbrot</title>
+        <para>
+            A modellezési nyelvek olyan mesterséges nyelvek, amelyekkel információt, tudást, rendszert fejezhetünk ki egy struktúrában, amelyet konzisztens szabályrendszer definiál. A programozáshoz leghasznosabb modellezés az UML. Ebben lehet vizualizálni az osztályokat, azok mezőit és metódusait, illetve az osztályok közötti kapcsolatokat. Léteznek különböző UML generáló eszközök, ezek közül hármat használtam ebben a fejeztben. Az első az Umbrello volt, amely képes forráskód elemzés alapján felépíteni egy diagrammot, illetve grafikusan is lehet osztálydiagrammot létrehozni. A második eszköz az Eclipse Papyrus volt, amellyel szintén grafikusan lehet UML ábrakat generálni, illetve az UML ábra alapján tud kódot is generálni. A harmadik a Tex UML, a TikZ csomaggal. Ez a LaTeX felhasználásával működik, LaTeX utasítások felhasználásával.
+        </para>
+    </section>
     <section>
         <title>Reverse engineering UML osztálydiagram</title>
         <para>

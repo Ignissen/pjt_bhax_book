@@ -6,6 +6,15 @@
         </keywordset>
     </info>
     <section>
+        <title>Olvasónapló - Calvin</title>
+        <para>
+            A multiparadigmás nyelvek olyan programozási nyelvek, amelyek egyszerre többféle paradigmát is tudnak követni. Ilyen nyelv például a Python. Ezek multiparadigmás nyelvek azt állítják, hogy a procedurális, objektum-orientált és funkcionális paradigmákat egyformán jól tudják alkalmazni.
+        </para>
+        <para>
+            Ezeken a nyelveken célszerű kihasználni, hogy több paradigmát is képesek kezelni, mivel vannak olyan problémák, feladatok, amelyeket célszerű az egyik módon megoldani. Egy játék fejlesztéséhez célszerű az objektum orientált paradigma, viszont egy egyszerű Fibonacci-függvényt procedurális vagy funkcionális paradigmával célszerű megoldani, felesleges köré egy osztályt építeni.
+        </para>
+    </section>
+    <section>
     	<title>MNIST</title>
     	<para>
             Az alap feladat megoldása, +saját kézzel rajzolt képet is ismerjen fel,

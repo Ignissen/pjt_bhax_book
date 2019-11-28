@@ -6,6 +6,18 @@
         </keywordset>
     </info>
     <section>
+        <title>Olvasónapló - Lauda</title>
+        <para>
+            A kivételek programozásban olyan kivételes helyzetek, amelyek a program nem várt futásából erednek. Például olyan helyzetek, mint fájlkezelésnél nem létező fájl vagy egy nullával való osztás.
+        </para>
+        <para>
+            A kivételkezelésre a legtöbb nyelvnek van eszköze. A C nyelvben különböző flagek beállításával lehet jelezni a kivétel bekövetkezését. C++/Java nyelven már léteznek különböző kivétel típusok, osztályok. Ezeken a nyelveken azokat a kódokat, amelyekben előfordulhatnak kivételek, try blokkokban lehet, Javaban kell, "próbálni", majd az eldobott kivétel(eke)t, ha van(nak) a catch blokkban kell kezelni. A kivételeket "dobni" a throw kulcsszóval lehet.
+        </para>
+        <para>
+            Az annotációk és attribútumok a programozási nyelvekben olyan nyelvi eszközök, amelyek segítségével metaadatokat építhetünk be a forrásokba. Az annotáció processzor olyan fordítóprogram-plugin, amely kielemzi az annotációkat és azok hatására hibaüzeneteket és figyelmeztetéseket nyomhat el, illetve jeleníthet meg.
+        </para>
+    </section>
+    <section>
     	<title>Port scan</title>
     	<para>
                 

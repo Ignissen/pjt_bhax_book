@@ -6,6 +6,15 @@
         </keywordset>
     </info>
     <section>
+        <title>Olvasónapló - Gödel</title>
+        <para>
+            Az interface-ek az osztályoknak egy változata, amely teljes mértékben absztrakt. Egyetlen metódusa sem lehet implementálva. Ezek az osztályok ténylegesen csak interface-ek az ezeket implementáló osztályokhoz. A collectionök absztrakt listák, amelyek azonos típusú, vagy közös ősű elemek tárolására alkalmasak.
+        </para>
+        <para>
+            A lambda kifejezések olyan nyelvi eszközök, amelyet a funkcionális nyelvekből vettek át. A lambda függvények névtelen függvények. Ezeket arra lehet használni, hogy függvényeknek adjunk át függvényeket paraméterül és nem akarjuk magát a függvényt külön "létrehozni". Természetesen másra is lehet használni, például akarunk létrehozni egy függvényt egy másik függvényen belül, de nem akarunk egy teljes függvényt deklarálni és implementálni.
+        </para>
+    </section>
+    <section>
     	<title>C++11 Custom Allocator</title>
     	<para>
             <link xlink:href="https://prezi.com/jvvbytkwgsxj/high-level-programming-languages-2-c11-allocators/">https://prezi.com/jvvbytkwgsxj/high-level-programming-languages-2-c11-allocators/</link> a CustomAlloc-os példa, lásd C forrást az UDPROG repóban!

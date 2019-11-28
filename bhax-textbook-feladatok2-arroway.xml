@@ -5,7 +5,12 @@
             <keyword/>
         </keywordset>
     </info>
-
+    <section>
+        <title>Olvasónapló - Arroway</title>
+        <para>
+            Az objektumok az objektumorientált programozási paradigma alapjai. Ez a paradigma az objektumokra és azok azok kapcsolataira épül. Az objektumok célja általában a valódi, létező tárgyak, objektumok leírása, jellemzése. Az objektumok leírására szolgálnak az osztályok. Az osztályokban vannak a mezők és metódusok. A mezők azok a változók, amelyek az objektum tulajdonságait írják le, míg a metódusok az objektum "viselkedését" írják le. Például legyen az objektumunk, amelyet modellezni akarunk, egy kutya. A katyának a mezői lehetnek  a kora, szőrszíne. A metódusai lehetnek az ugatás, farkcsóválás. Az osztályokból létrehozott példányok az objektumok, ezt híjuk példányosításnak.
+        </para>
+    </section>
     <section>
         <title>OOP szemlélet</title>
         <para>

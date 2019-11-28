@@ -6,6 +6,28 @@
         </keywordset>
     </info>
     <section>
+        <title>Olvasónapló - Schwarzenegger</title>
+        <para>
+            Az adatfolyam digitálisan kódolt összetartozó jelek sorozata. Az adatfolyamok az adattudományokhoz a Big Data-hoz és Mesterséges Intelligencia alkalmazásokhoz nagyon hasznosak.
+        </para>
+        <para>
+            Vannak olyan programozási nyelvek, ahol az IO eleme a nyelvnek, ilyen például a Java, illetve olyanok is, ahol nem, például a C/C++. A fájlkezelés általános folyamata: <programlisting>
+            <![CDATA[
+adatfolyam megnyitása
+amíg van adat
+    írás/olvasás
+adatfolyam bezárása
+]]>
+            </programlisting>
+        </para>
+        <para>
+            A Java nyelv tartalmaz  egy objektum szerializációnak nevezett mechanizmust, amely a Java objektumokat bájtsorozattá alakítja. Ez a bájtsorozat az objektumról minden adatot tartalmaz.
+        </para>
+        <para>
+            Miután a szerializált objektumot fájlba írunk, abból a fájlból újra fel lehet építeni az objektumot memóriában. Ez a folyamat a JVM implementációtól teljesen független. Ez azt jelenti, hogy valamelyik platformon szerializálhatjuk, majd egy teljesen másik platformon deszerializálhatjuk.
+        </para>
+    </section>
+    <section> 
     	<title>FUTURE tevékenység editor</title>
     	<para>
             Javítsunk valamit a ActivityEditor.java JavaFX programon!

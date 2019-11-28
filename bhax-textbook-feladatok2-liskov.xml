@@ -5,20 +5,25 @@
             <keyword/>
         </keywordset>
     </info>
-
+    <section>
+        <title>Olvasónapló - Liskov</title>
+        <para>
+            Az objektumorientáltság egyik lefgontosabb fogalma az öröklődés. Az öröklődés azt jelenti, hogy az új osztályunk bizonyos metódusokat és mezőket "megörökli". Az új osztályunkban módosíthatjuk az osztály viselkedését, illetve adhatunk hozzá új funkcionalitást is. A polimurfizmus az a jelenség, hogy a gyerekosztályt elérhetjük a szülőosztályon keresztül. A metódustúlterhelés azt jelenti, hogy az ősosztály metódusait újra lehet implementálni az alosztálynak megfelelően. A láthatósági szintek az objektumok rejtési módzsere. A láthatóság lehet publikus, privát és védett. A publikus tagot azok, amelyek bárhonnan láthatóak. A privát tagok, amelyek csak az osztályból láthatóak. A védett tagok csak az osztályból és a gyerekosztályokból láthatóak. Az absztrakt osztályok azok az osztályok, amelyek csak deklarálják a metódusokat és mezőket, viszont a metódusokat nem implementálják, az a gyerekosztályok feladata.
+        </para>
+    </section>
     <section>
         <title>Liskov helyettesítés sértése</title>
         <para>
             Írjunk olyan OO, leforduló Java és C++ kódcsipetet, amely megsérti a Liskov elvet! Mutassunk rá a
             megoldásra: jobb OO tervezés.
-            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_1.pdf (93-99 fólia)
+            <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_1.pdf">https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_1.pdf (93-99 fólia)</link>
             (számos példa szerepel az elv megsértésére az UDPROG repóban, lásd pl. source/binom/BatfaiBarki/madarak/)
         </para>
         <para>
             Források: <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes">https://github.com/Ignissen/pjt_prog2/tree/master/liskov_sertes</link>
         </para>
         <para>
-            A Liskov helyettesítési elv kimanjda, hogy ha S altípusa T-nek, akkor minden olyan helyen ahol T-t felhasználjuk S-t is minden gond nélkül behelyettesíthetjük anélkül, hogy a programrész tulajdonságai megváltoznának.
+            A Liskov helyettesítési elv kimonjda, hogy ha S altípusa T-nek, akkor minden olyan helyen ahol T-t felhasználjuk S-t is minden gond nélkül behelyettesíthetjük anélkül, hogy a programrész tulajdonságai megváltoznának.
         </para>
         <para>
             A feladat az volt, hogy írnunk kell Javaban és C++-ban olyan programokat, amelyek lefordulnak és lefutnak, viszont megsértik a Liskov elvet. Erre példa a két program. A programok szerint a pingvin is tud repülni, mivel madár. Mivel a számítógép nem tudja ismeri a madarakat, azért a Penguin típusó objektumunk is tud repülni. A programok lefordulnak és a számítógép szemszögéből hibátlanul lefutnak, viszont mi emberek tudjuk, hogy óriási szemantikai hiba van a programban, ugyanis a pingvinek röpképtelen madarak.

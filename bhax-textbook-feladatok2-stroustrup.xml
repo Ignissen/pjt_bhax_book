@@ -6,6 +6,12 @@
         </keywordset>
     </info>
     <section>
+        <title>Olvasónapló - Stroustrup</title>
+        <para>
+                Mint a korábbi fejezetben írtam, az osztályoknak vannak tagjai. Ezek mezők, nevesített konstansok, vagy pedig metódusok. Az osztályoknak lehet konstruktort definiálni, többet is. A konstruktor függvények az objektum létrehozásakor fut le, általában az objektum mezőinek inicializálása céljából. A desktruktor függvény pedig az objektum törlésénél fut le. A desktroktorok főleg akkor fontosak, amikor az osztály dinamikusan foglal memóriát, mivel azt fel is kell szabadítanunk a program futása után. Osztályon belül lehet osztályokat definiálni, ezek a beágyazott típusok.
+            </para>
+    </section>
+    <section>
     	<title>JDK osztályok</title>
     	<para>
             Írjunk olyan Boost C++ programot (indulj ki például a fénykardból) amely kilistázza a JDK összes
