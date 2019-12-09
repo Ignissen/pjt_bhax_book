@@ -48,6 +48,13 @@
         <para>
             Ez a megoldás az előző rész szintén Chomsky fejezetének l337.l feladatára épül. A legszembetűnőbb különbség, hogy ebben a megoldásban már egy osztály dolgozza fel a bemeneten kapott stringet. A cipher struct helyét átvette a dict nevű <programlisting><![CDATA[std::map<char, std::vector<std::string>>]]></programlisting> map, amely egy szótárnak megfeletethető. Ez a szótár tartalmazza, hogy melyik karakterhez melyik l337 "titkosítás" tartozik. A l337-ről már volt szó az előző rész Chomsky fejezetében, szóval itt nem írnám le újra.
         </para>
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/l337.png"  scale="80"/>
+                </imageobject>
+            </mediaobject>
+        </para>
     </section>
     <section>
         <title>Full screen</title>
@@ -57,9 +64,19 @@
         </para>
         <para>
             A feladat az volt, hogy készítsünk egy Java programot, amely teljes képernyős üzemmódban fut. A <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/chomsky/labirintus">Labirintus Játékot</link> sikerült életre kelteni. Hasonló problémával szenvedett, mint az Encoding feladat példája. Mivel ez a játék 1024x768-as felbontásra lett elkészítve, ezért az én 21:9-es képarányú monitoromon, 2560x1080-as felbontással, nem volt túlzottan teljes képernyős hatása, annak ellenére, hogy tényleg teljes képernyős üzemmódban indult el.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/labirintus.png"  scale="25"/>
+                </imageobject>
+            </mediaobject>
         </para>
         <para>
             Ezért úgy döntöttem, hogy írok egy egyszerű <link xlink:href="https://github.com/Ignissen/pjt_prog2/tree/master/chomsky/fullscreen">saját programot</link> a feladatra. A program teljes képernyős üzemmódban indul, majd véletlenszerű helyre rajzol egy kitöltött ellipszist, véletlenszerű szélességgel és magassággal, véletlenszerű színnel. Ezt a rajzolást minden tizedek ezredmásodperc után végrehajtja. Ha elindítjuk a programot, egy régi képernyővédő-szerű hatást kelt.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/fullscreen_sajat.png"  scale="25"/>
+                </imageobject>
+            </mediaobject>
         </para>
     </section>
     <section>

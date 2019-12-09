@@ -36,6 +36,13 @@
         <para>
             A következő módosítás pedig, hogy a tanítás után töltse be az általunk megadott fájlból a képet, amely egy kézzel rajzolt számjegy és próbálja "kitalálni", hogy melyik szám lehet. Miután a standard outputra kiírja, hogy a modell szerint a képen lévő szám, a program kiírja a helyes választ, majd a matplotlib segítségével megjelenítem a megadott képet.
         </para>
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/mnist.png" scale="40"/>
+                </imageobject>
+            </mediaobject>
+        </para>
     </section>
     <section>
         <title>Deep MNIST</title>

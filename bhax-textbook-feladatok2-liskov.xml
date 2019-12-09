@@ -91,6 +91,18 @@
         <para>
             Feladat volt még, hogy apró módosításokat végezzünk a programon. Én a program színein változtattam kicsit, ez az SMNISTSurfaceView osztály <function>cinit</function> metódusának elején lehetséges.
         </para>
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/smnist1.jpg" scale="50"/>
+                </imageobject>
+            </mediaobject>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/smnist2.jpg" scale="50"/>
+                </imageobject>
+            </mediaobject>
+        </para>
     </section> 
 
     <section>

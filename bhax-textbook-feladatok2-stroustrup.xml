@@ -23,6 +23,14 @@
         <para>
             A megoldásomat <link xlink:href="https://gist.github.com/vivithemage/9517678">erre a gistre</link> alapoztam. Az eredeti program "lényegi" részét a <type>void</type> <function>list</function> függvénybe tettem, mivel rekurzívan szeretném listázni a fájlokat. A for ciklusban először megnézem, hogy az éppen vizsgált fájl .java kiterjesztésű-e és, ha igen, akkor a sum változót növelem eggyel. Ezután újravizsgálom, hogy .java kiterjesztésű-e a fájl, ha igen, akkor megfelelő indentálással, a jobb elkülöníthetőség érdekében, kiíratom a fájl nevét. Ezután vizsgálom, hogy az éppen vizsgált fájl és mappa-e, mivel linuxon minden fájl, ha igen, akkor rekurzívan meghívom arra a mappára is a <function>list</function> függvényt. Ha a program eléri az argumentumként megadott mappa végét, a program kiírja, hogy mennyi publikus Java osztályt talált a mappában, majd leáll. A megoldáshoz mellékeltem egy Makefile-t, amely a make parancs kiadásával lefordítja a programot, illetve a jdkX mappába kicsomagolja a megfelelő src.zip állomány tartalmát.
         </para>
+        <para>
+            Egy példa a program futására:
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/jdk_boost.png"  scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </para>
     </section>
     <section>
         <title>Másoló-mozgató szemantika</title>
@@ -31,7 +39,7 @@
             szemantikáját, a mozgató konstruktort alapozd a mozgató értékadásra!
         </para>
         <para>
-            Ezt a feladatot az előző rész <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/binfa_move.cpp">6.6-os feladatában</link>> lévő példával magyaráznám.
+            Ezt a feladatot az előző rész <link xlink:href="https://github.com/Ignissen/pjt_prog1/blob/master/binfa_move.cpp">6.6-os feladatában</link> lévő példával magyaráznám.
         </para>
         <para>
             <programlisting>

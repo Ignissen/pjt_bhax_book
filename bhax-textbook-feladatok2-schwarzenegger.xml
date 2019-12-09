@@ -73,6 +73,14 @@ private void editCell() {
         <para>
             A hibát az okozta, hogy átnevezésnél, csak létrehoztunk egy új fájlt, viszont az eredeti tartalmat nem mozgattuk. A tartalmat ennél a megoldásnál sem mozgatjuk, hanem a fájlt átnevezzük a <function>renameTo</function> függvény segítségével a fájlrendszerben, illetve a <function>commitEdit</function> függvényt az új fájl nevével hívjuk meg, ezzel biztosítva, hogy a programon belül is nyoma legyen az átnevezésnek.
         </para>
+        <para>
+            Így néz ki a program felülete:
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/future.png"  scale="50"/>
+                </imageobject>
+            </mediaobject>
+        </para>
     </section>
     <section>
         <title>OOCWC Boost ASIO hálózatkezelése</title>

@@ -82,6 +82,19 @@
         <para>
             Ezen felül feladat volt, hogy A Java-s LZW Bináris Fát el lehessen érni böngészőből is GET kéréssel. Ehhez a Java Servletet használtam. Segítségül az Eclipse Enterprise Java-hoz való IDE-jét használtam, illetve egy Tomcat szervert. A Servlet.java fájlban található a GET és POST kéréseket kiszolgáló kód, amely POST kérés esetén hibakódod küld, hogy POST kérés nem támogatott a szerveren. GET kérés esetén létrehoz egy Binfa objektumot, a bementi string alapján felépíti a bináris fát, majd a kérésben megadott bajárási metódussal(preorder, inorder, postorder) bejárja a fát. A servlet a GET kéréseket HTML formátumban szolgálja ki. Ehhez a Binfa osztályon belül létrehoztam még két metódust. Az egyik feladata, hogy beállíthassuk, hogy hova szeretnénk, ha a program írna (jelen esetben ez lehet a System.out vagy pedig a request objektum). A másik metódus pedig a <function >writeHTMl</function>, amelynek a célja, hogy meghívja a megfelelő bejárási metódust, amely kiírja a kiválaszott kimenetre a bináris fát, illetve egyéb adatokat róla. Amennyiben nem adunk meg a kérésben paramétereket, vagy rosszakat adunk meg, a program nem fog hibával kilépni, hanem alapértelmezett értékekkel fog lefutni.
         </para>
+        <para>
+            Végül néhány kép a program működéséről:
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/servlet_binfa1.png" scale="45"/>
+                </imageobject>
+            </mediaobject>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/servlet_binfa2.png" scale="45"/>
+                </imageobject>
+            </mediaobject>
+        </para>
     </section>
 
     <section>
