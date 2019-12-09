@@ -183,6 +183,11 @@ void keyboard ( unsigned char key, int x, int y )
 }
                 ]]>
             </programlisting>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/para.png"  scale="40"/>
+                </imageobject>
+            </mediaobject>
         </para>
     </section>
 </chapter>
